@@ -1,0 +1,9 @@
+<!-- templates/courses/course_list.html -->
+<h1>Courses</h1>
+<ul>
+  {% for course in courses %}
+    <li>{{ course.title }}</li>
+  {% empty %}
+    <li>No courses available.</li>
+  {% endfor %}
+</ul>

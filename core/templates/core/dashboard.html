@@ -1,0 +1,46 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="bg-gray-100 min-h-screen p-6">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Welcome, {{ user.username }}!</h1>
+
+    {% if user.role == 'instructor' %}
+      <!-- Instructor Dashboard -->
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <a href="{% url 'course_create' %}" class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <h2 class="text-lg font-semibold text-indigo-600">Create a Course</h2>
+          <p class="text-gray-600 text-sm mt-2">Start a new course and assign exams or assignments.</p>
+        </a>
+
+        <a href="{% url 'generate_exam' %}" class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <h2 class="text-lg font-semibold text-purple-600">Generate Exam with AI</h2>
+          <p class="text-gray-600 text-sm mt-2">Use Gemini AI to auto-generate questions for your course.</p>
+        </a>
+
+        <a href="{% url 'assignment_list' %}" class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <h2 class="text-lg font-semibold text-emerald-600">Assignments</h2>
+          <p class="text-gray-600 text-sm mt-2">View or assign course assignments and grade them.</p>
+        </a>
+
+      </div>
+
+    {% elif user.role == 'student' %}
+      <!-- Student Dashboard -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="{% url 'course_list' %}" class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <h2 class="text-lg font-semibold text-blue-600">My Courses</h2>
+          <p class="text-gray-600 text-sm mt-2">Browse and view your enrolled courses.</p>
+        </a>
+
+        <a href="{% url 'exam_submission_list' %}" class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <h2 class="text-lg font-semibold text-pink-600">Submit Exams</h2>
+          <p class="text-gray-600 text-sm mt-2">Submit your answers for assigned exams.</p>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

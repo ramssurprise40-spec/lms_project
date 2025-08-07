@@ -1,0 +1,364 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Analytics & Reports - EduKart Admin{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex items-center justify-between">
+            <div>
+                <h1 class="text-3xl font-bold mb-2">Analytics & Reports</h1>
+                <p class="text-emerald-100">Comprehensive insights into platform performance</p>
+            </div>
+            <div class="flex space-x-3">
+                <button class="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg hover:bg-white/30 transition-colors">
+                    <i class="fas fa-calendar mr-2"></i>Custom Range
+                </button>
+                <button class="bg-white text-emerald-600 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors font-medium">
+                    <i class="fas fa-download mr-2"></i>Export Report
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Time Period Selector -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4">
+    <div class="bg-white rounded-xl shadow-lg border border-gray-100 mb-8">
+        <div class="p-6">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="flex space-x-2">
+                    <button class="px-4 py-2 bg-emerald-600 text-white rounded-lg font-medium">Last 7 Days</button>
+                    <button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg font-medium">Last 30 Days</button>
+                    <button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg font-medium">Last 90 Days</button>
+                    <button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg font-medium">This Year</button>
+                </div>
+                <div class="text-sm text-gray-600">
+                    Data as of {{ current_date|date:"F d, Y" }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Metrics Overview -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <!-- Total Revenue -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+            <div class="flex items-center justify-between mb-4">
+                <div class="bg-green-50 p-3 rounded-full">
+                    <i class="fas fa-dollar-sign text-green-600 text-xl"></i>
+                </div>
+                <span class="text-green-600 text-sm font-medium">+12.5%</span>
+            </div>
+            <div>
+                <p class="text-sm font-medium text-gray-600">Total Revenue</p>
+                <p class="text-3xl font-bold text-gray-900">${{ total_revenue|default:"0"|floatformat:0 }}</p>
+            </div>
+        </div>
+
+        <!-- Course Completion Rate -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+            <div class="flex items-center justify-between mb-4">
+                <div class="bg-blue-50 p-3 rounded-full">
+                    <i class="fas fa-chart-line text-blue-600 text-xl"></i>
+                </div>
+                <span class="text-blue-600 text-sm font-medium">+5.2%</span>
+            </div>
+            <div>
+                <p class="text-sm font-medium text-gray-600">Completion Rate</p>
+                <p class="text-3xl font-bold text-gray-900">{{ completion_rate|default:"0" }}%</p>
+            </div>
+        </div>
+
+        <!-- Active Students -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+            <div class="flex items-center justify-between mb-4">
+                <div class="bg-purple-50 p-3 rounded-full">
+                    <i class="fas fa-user-graduate text-purple-600 text-xl"></i>
+                </div>
+                <span class="text-purple-600 text-sm font-medium">+8.7%</span>
+            </div>
+            <div>
+                <p class="text-sm font-medium text-gray-600">Active Students</p>
+                <p class="text-3xl font-bold text-gray-900">{{ active_students|default:"0" }}</p>
+            </div>
+        </div>
+
+        <!-- Average Rating -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+            <div class="flex items-center justify-between mb-4">
+                <div class="bg-yellow-50 p-3 rounded-full">
+                    <i class="fas fa-star text-yellow-600 text-xl"></i>
+                </div>
+                <span class="text-yellow-600 text-sm font-medium">+0.3</span>
+            </div>
+            <div>
+                <p class="text-sm font-medium text-gray-600">Average Rating</p>
+                <p class="text-3xl font-bold text-gray-900">{{ average_rating|default:"0"|floatformat:1 }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <!-- Enrollment Trends -->
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100">
+            <div class="p-6 border-b border-gray-100">
+                <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                    <i class="fas fa-chart-area text-emerald-500 mr-2"></i>
+                    Enrollment Trends
+                </h3>
+            </div>
+            <div class="p-6">
+                <div class="h-64 flex items-center justify-center bg-gray-50 rounded-lg">
+                    <!-- Placeholder for chart -->
+                    <div class="text-center">
+                        <i class="fas fa-chart-area text-4xl text-gray-400 mb-2"></i>
+                        <p class="text-gray-500">Enrollment Chart</p>
+                        <p class="text-sm text-gray-400">Chart.js or similar integration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Revenue by Course Category -->
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100">
+            <div class="p-6 border-b border-gray-100">
+                <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                    <i class="fas fa-pie-chart text-blue-500 mr-2"></i>
+                    Revenue by Category
+                </h3>
+            </div>
+            <div class="p-6">
+                <div class="h-64 flex items-center justify-center bg-gray-50 rounded-lg">
+                    <!-- Placeholder for pie chart -->
+                    <div class="text-center">
+                        <i class="fas fa-pie-chart text-4xl text-gray-400 mb-2"></i>
+                        <p class="text-gray-500">Revenue Distribution</p>
+                        <p class="text-sm text-gray-400">Chart.js pie chart</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Performance Tables -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <!-- Top Performing Courses -->
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100">
+            <div class="p-6 border-b border-gray-100">
+                <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                    <i class="fas fa-trophy text-yellow-500 mr-2"></i>
+                    Top Performing Courses
+                </h3>
+            </div>
+            <div class="p-6">
+                <div class="space-y-4">
+                    {% for course in top_courses %}
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center text-white font-bold text-sm mr-3">
+                                {{ forloop.counter }}
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-900">{{ course.title|truncatechars:30 }}</p>
+                                <p class="text-sm text-gray-500">{{ course.enrolled_count }} students</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-emerald-600">${{ course.revenue|floatformat:0 }}</p>
+                            <p class="text-sm text-gray-500">{{ course.rating|floatformat:1 }} ★</p>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <div class="text-center py-8 text-gray-500">
+                        <i class="fas fa-chart-bar text-3xl mb-2 opacity-50"></i>
+                        <p>No course data available</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Instructors -->
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100">
+            <div class="p-6 border-b border-gray-100">
+                <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                    <i class="fas fa-chalkboard-teacher text-purple-500 mr-2"></i>
+                    Top Instructors
+                </h3>
+            </div>
+            <div class="p-6">
+                <div class="space-y-4">
+                    {% for instructor in top_instructors %}
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center">
+                                <span class="text-white font-medium text-sm">
+                                    {{ instructor.first_name.0|upper }}{{ instructor.last_name.0|upper }}
+                                </span>
+                            </div>
+                            <div class="ml-3">
+                                <p class="font-medium text-gray-900">{{ instructor.first_name }} {{ instructor.last_name }}</p>
+                                <p class="text-sm text-gray-500">{{ instructor.course_count }} courses</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-purple-600">{{ instructor.total_students }}</p>
+                            <p class="text-sm text-gray-500">students</p>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <div class="text-center py-8 text-gray-500">
+                        <i class="fas fa-user-graduate text-3xl mb-2 opacity-50"></i>
+                        <p>No instructor data available</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Analytics -->
+    <div class="bg-white rounded-xl shadow-lg border border-gray-100 mb-8">
+        <div class="p-6 border-b border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                <i class="fas fa-analytics text-indigo-500 mr-2"></i>
+                Detailed Analytics
+            </h3>
+        </div>
+        <div class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- User Engagement -->
+                <div class="text-center p-6 bg-blue-50 rounded-lg">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">User Engagement</h4>
+                    <p class="text-3xl font-bold text-blue-600 mb-1">{{ engagement_rate|default:"0" }}%</p>
+                    <p class="text-sm text-gray-600">Average session duration: {{ avg_session_duration|default:"0" }} min</p>
+                </div>
+
+                <!-- Course Progress -->
+                <div class="text-center p-6 bg-green-50 rounded-lg">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tasks text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Average Progress</h4>
+                    <p class="text-3xl font-bold text-green-600 mb-1">{{ avg_progress|default:"0" }}%</p>
+                    <p class="text-sm text-gray-600">Across all active enrollments</p>
+                </div>
+
+                <!-- Support Tickets -->
+                <div class="text-center p-6 bg-orange-50 rounded-lg">
+                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-life-ring text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Support Tickets</h4>
+                    <p class="text-3xl font-bold text-orange-600 mb-1">{{ support_tickets|default:"0" }}</p>
+                    <p class="text-sm text-gray-600">{{ resolved_tickets|default:"0" }} resolved this month</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Performance -->
+    <div class="bg-white rounded-xl shadow-lg border border-gray-100">
+        <div class="p-6 border-b border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                <i class="fas fa-server text-gray-500 mr-2"></i>
+                System Performance
+            </h3>
+        </div>
+        <div class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Server Uptime -->
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-3">
+                        <svg class="w-20 h-20 transform -rotate-90">
+                            <circle cx="40" cy="40" r="36" stroke="#e5e7eb" stroke-width="8" fill="transparent"></circle>
+                            <circle cx="40" cy="40" r="36" stroke="#10b981" stroke-width="8" fill="transparent" 
+                                    stroke-dasharray="226" stroke-dashoffset="2" stroke-linecap="round"></circle>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-lg font-bold text-gray-900">99.9%</span>
+                        </div>
+                    </div>
+                    <p class="font-medium text-gray-900">Server Uptime</p>
+                </div>
+
+                <!-- Response Time -->
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-3">
+                        <svg class="w-20 h-20 transform -rotate-90">
+                            <circle cx="40" cy="40" r="36" stroke="#e5e7eb" stroke-width="8" fill="transparent"></circle>
+                            <circle cx="40" cy="40" r="36" stroke="#3b82f6" stroke-width="8" fill="transparent" 
+                                    stroke-dasharray="226" stroke-dashoffset="45" stroke-linecap="round"></circle>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-lg font-bold text-gray-900">120ms</span>
+                        </div>
+                    </div>
+                    <p class="font-medium text-gray-900">Avg Response</p>
+                </div>
+
+                <!-- Database Performance -->
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-3">
+                        <svg class="w-20 h-20 transform -rotate-90">
+                            <circle cx="40" cy="40" r="36" stroke="#e5e7eb" stroke-width="8" fill="transparent"></circle>
+                            <circle cx="40" cy="40" r="36" stroke="#8b5cf6" stroke-width="8" fill="transparent" 
+                                    stroke-dasharray="226" stroke-dashoffset="68" stroke-linecap="round"></circle>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-lg font-bold text-gray-900">85ms</span>
+                        </div>
+                    </div>
+                    <p class="font-medium text-gray-900">DB Query Time</p>
+                </div>
+
+                <!-- Storage Usage -->
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-3">
+                        <svg class="w-20 h-20 transform -rotate-90">
+                            <circle cx="40" cy="40" r="36" stroke="#e5e7eb" stroke-width="8" fill="transparent"></circle>
+                            <circle cx="40" cy="40" r="36" stroke="#f59e0b" stroke-width="8" fill="transparent" 
+                                    stroke-dasharray="226" stroke-dashoffset="113" stroke-linecap="round"></circle>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-lg font-bold text-gray-900">50%</span>
+                        </div>
+                    </div>
+                    <p class="font-medium text-gray-900">Storage Used</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Add interactivity for time period buttons
+    document.addEventListener('DOMContentLoaded', function() {
+        const periodButtons = document.querySelectorAll('[data-period]');
+        
+        periodButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                periodButtons.forEach(btn => {
+                    btn.classList.remove('bg-emerald-600', 'text-white');
+                    btn.classList.add('text-gray-600', 'hover:bg-gray-100');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('bg-emerald-600', 'text-white');
+                this.classList.remove('text-gray-600', 'hover:bg-gray-100');
+                
+                // Here you would typically make an AJAX call to update the data
+                console.log('Period changed to:', this.textContent);
+            });
+        });
+    });
+</script>
+{% endblock %}

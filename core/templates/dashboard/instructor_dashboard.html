@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Dashboard Professeur{% endblock %}
+
+{% block content %}
+<h2>Mes cours enseignés</h2>
+
+{% if courses %}
+    <ul class="list-group">
+    {% for course in courses %}
+        <li class="list-group-item">
+            <strong>{{ course.title }}</strong> - {{ course.description|truncatechars:100 }}
+            <a href="{% url 'course_update' course.pk %}">Modifier</a> |
+            <a href="{% url 'course_delete' course.pk %}">Supprimer</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Vous n'enseignez aucun cours pour l'instant.</p>
+{% endif %}
+
+<a href="{% url 'course_create' %}" class="btn btn-primary mt-3">Créer un nouveau cours</a>
+{% endblock %}

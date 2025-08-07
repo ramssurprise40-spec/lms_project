@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% block title %}Submit Exam{% endblock %}
+{% block content %}
+<h2>{{ exam.title }}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {% for question in questions %}
+        <div class="mb-3">
+            <strong>Question {{ forloop.counter }}:</strong> {{ question.text }}
+            <textarea name="question_{{ question.pk }}" class="form-control mt-2" rows="4"></textarea>
+        </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+{% endblock %}

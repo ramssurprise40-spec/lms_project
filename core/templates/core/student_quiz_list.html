@@ -1,0 +1,140 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}My Quizzes - Academic Learning Platform{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <!-- Header Section -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl mb-6">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+            </div>
+            <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+                My Quizzes
+            </h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Complete your assessments and track your academic progress</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center mb-8">
+            <a href="{% url 'student_dashboard' %}" 
+               class="inline-flex items-center px-6 py-3 bg-white text-gray-700 rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-md hover:shadow-lg">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Back to Dashboard
+            </a>
+            <div class="text-sm text-gray-500">
+                {{ quizzes|length }} quiz{{ quizzes|length|pluralize }} available
+            </div>
+        </div>
+
+        <!-- Quizzes List -->
+        {% if quizzes %}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {% for quiz in quizzes %}
+                    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                        <!-- Quiz Header -->
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
+                                Quiz
+                            </span>
+                        </div>
+
+                        <!-- Quiz Info -->
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ quiz.title }}</h3>
+                        <p class="text-gray-600 text-sm mb-3">Course: {{ quiz.course.title }}</p>
+                        <p class="text-gray-500 text-xs mb-4">Created: {{ quiz.created_at|date:"M d, Y" }}</p>
+
+                        <!-- Action Buttons -->
+                        <div class="flex space-x-2">
+                            {% if quiz.is_completed_by_user %}
+                                <span class="flex-1 bg-green-100 text-green-800 text-center py-2 rounded-lg text-sm font-medium">
+                                    <svg class="w-4 h-4 inline mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Completed
+                                </span>
+                            {% else %}
+                                <a href="{% url 'student_quiz_detail' quiz.pk %}" 
+                                   class="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                                    Start Quiz
+                                </a>
+                            {% endif %}
+                        </div>
+
+                        <!-- Instructor Info -->
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <div class="flex items-center justify-between">
+                                <div class="text-xs text-gray-500">
+                                    Instructor: {{ quiz.created_by.first_name }} {{ quiz.created_by.last_name }}
+                                </div>
+                                <a href="{% url 'message_instructor' quiz.created_by.pk %}" 
+                                   class="text-blue-600 hover:text-blue-800 text-xs">
+                                    <svg class="w-3 h-3 inline mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                    </svg>
+                                    Message
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <!-- Empty State -->
+            <div class="bg-white rounded-xl shadow-lg p-12 text-center">
+                <div class="w-24 h-24 mx-auto mb-4 bg-gray-100 rounded-lg flex items-center justify-center">
+                    <svg class="w-12 h-12 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">No Quizzes Available</h3>
+                <p class="text-gray-600 mb-6">You don't have any quizzes to complete at the moment.</p>
+                <div class="space-y-2">
+                    <p class="text-sm text-gray-500">• Enroll in courses to access quizzes</p>
+                    <p class="text-sm text-gray-500">• Check back later for new assignments</p>
+                </div>
+                <div class="mt-6">
+                    <a href="{% url 'course_list' %}" 
+                       class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                        Browse Courses
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+
+        <!-- Tips Section -->
+        <div class="mt-8 bg-white rounded-xl shadow-lg p-6">
+            <h2 class="text-lg font-semibold text-gray-900 mb-4">📚 Study Tips</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="text-center">
+                    <div class="text-2xl mb-2">⏰</div>
+                    <h3 class="font-medium text-gray-900 mb-1">Manage Your Time</h3>
+                    <p class="text-sm text-gray-600">Read questions carefully and plan your time</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl mb-2">📖</div>
+                    <h3 class="font-medium text-gray-900 mb-1">Review Materials</h3>
+                    <p class="text-sm text-gray-600">Go through course materials before starting</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl mb-2">💭</div>
+                    <h3 class="font-medium text-gray-900 mb-1">Stay Focused</h3>
+                    <p class="text-sm text-gray-600">Find a quiet place and avoid distractions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

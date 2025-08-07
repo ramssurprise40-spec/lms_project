@@ -1,0 +1,109 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}AI Concept Explainer{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-orange-50 to-red-100 py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">
+                💡 AI Concept Explainer
+            </h1>
+            <p class="text-lg text-gray-600">
+                Get clear, grade-appropriate explanations of complex concepts
+            </p>
+        </div>
+
+        <!-- Concept Form -->
+        <div class="bg-white rounded-xl shadow-lg p-8">
+            <form method="post" class="space-y-6">
+                {% csrf_token %}
+                
+                <div>
+                    <label for="concept" class="block text-sm font-medium text-gray-700 mb-2">
+                        Concept to Explain *
+                    </label>
+                    <input type="text" 
+                           id="concept" 
+                           name="concept" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                           placeholder="e.g., Quantum Physics, Photosynthesis, Machine Learning">
+                </div>
+
+                <div>
+                    <label for="grade_level" class="block text-sm font-medium text-gray-700 mb-2">
+                        Target Grade Level *
+                    </label>
+                    <select id="grade_level" 
+                            name="grade_level" 
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                        <option value="">Select grade level</option>
+                        <option value="elementary">Elementary (K-5)</option>
+                        <option value="middle school">Middle School (6-8)</option>
+                        <option value="high school">High School (9-12)</option>
+                        <option value="college">College/University</option>
+                        <option value="graduate">Graduate Level</option>
+                    </select>
+                </div>
+
+                <!-- Tips Section -->
+                <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                    <h3 class="text-sm font-medium text-orange-800 mb-2">💡 Tips for Better Explanations:</h3>
+                    <ul class="text-sm text-orange-700 space-y-1">
+                        <li>• Be specific about the concept (e.g., "Mitosis" rather than "Cell division")</li>
+                        <li>• Choose the appropriate grade level for your audience</li>
+                        <li>• The AI will provide examples, analogies, and real-world applications</li>
+                        <li>• Common misconceptions will be addressed automatically</li>
+                    </ul>
+                </div>
+
+                <div class="flex justify-between items-center pt-6">
+                    <a href="{% url 'ai_dashboard' %}" 
+                       class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+                        ← Back to AI Tools
+                    </a>
+                    
+                    <button type="submit" 
+                            class="px-8 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                        Explain Concept
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Sample Preview -->
+        <div class="mt-8 bg-white rounded-xl shadow-lg p-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">📋 What You'll Get:</h2>
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <span class="text-green-500 mr-3 mt-1">✓</span>
+                    <span class="text-gray-600">Clear, age-appropriate definition</span>
+                </div>
+                <div class="flex items-start">
+                    <span class="text-green-500 mr-3 mt-1">✓</span>
+                    <span class="text-gray-600">Key characteristics and components</span>
+                </div>
+                <div class="flex items-start">
+                    <span class="text-green-500 mr-3 mt-1">✓</span>
+                    <span class="text-gray-600">Real-world examples and analogies</span>
+                </div>
+                <div class="flex items-start">
+                    <span class="text-green-500 mr-3 mt-1">✓</span>
+                    <span class="text-gray-600">Why the concept is important</span>
+                </div>
+                <div class="flex items-start">
+                    <span class="text-green-500 mr-3 mt-1">✓</span>
+                    <span class="text-gray-600">Common misconceptions addressed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

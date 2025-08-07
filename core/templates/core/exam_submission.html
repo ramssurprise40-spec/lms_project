@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+{% block title %}Submit Exam{% endblock %}
+{% block content %}
+<h1 class="text-2xl font-bold mb-4">Submit Exam</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="mt-4 bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700">Submit</button>
+</form>
+{% endblock %}

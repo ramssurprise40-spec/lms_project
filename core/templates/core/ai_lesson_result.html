@@ -1,0 +1,181 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}AI Generated Result{% endblock %}
+
+{% block content %}
+
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <div class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-lg flex items-center justify-center">
+        <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9 12a1 1 0 102 0V7a1 1 0 10-2 0v5zM9 16a1 1 0 102 0 1 1 0 00-2 0z"/>
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+      </div>
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">AI Generated Content</h1>
+      <p class="text-lg text-gray-600">
+        Here is your AI-generated <strong>{{ type }}</strong> result.
+      </p>
+    </div>
+
+    <!-- Content Display -->
+    <div class="bg-white rounded-xl shadow-lg p-8">
+      {% if type == 'lesson_plan' %}
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">
+          Lesson Plan: {{ lesson_plan.topic|default:"Generated Lesson Plan" }}
+        </h2>
+        {% if lesson_plan.content %}
+          <div class="prose max-w-none">
+            <pre class="whitespace-pre-wrap text-gray-700 font-mono text-sm leading-relaxed">{{ lesson_plan.content }}</pre>
+          </div>
+        {% else %}
+          <div class="text-red-500 p-4 bg-red-50 rounded-lg">
+            <p>❌ No lesson plan content was generated. Please try again with a different topic.</p>
+          </div>
+        {% endif %}
+        
+      {% elif type == 'quiz' %}
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">
+          Quiz on {{ quiz.topic|default:"Generated Quiz" }}
+          {% if quiz.is_demo %}
+            <span class="inline-block ml-3 px-3 py-1 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">
+              Demo Content
+            </span>
+          {% endif %}
+        </h2>
+        
+        <!-- Demo Content Notice -->
+        {% if quiz.is_demo %}
+          <div class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+            <div class="flex items-start">
+              <svg class="w-5 h-5 text-yellow-400 mt-0.5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <h3 class="text-yellow-800 font-medium">Demo Content Notice</h3>
+                <p class="text-yellow-700 mt-1 text-sm">{{ quiz.demo_message }}</p>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        {% if quiz.questions %}
+          <div class="prose max-w-none">
+            <pre class="whitespace-pre-wrap text-gray-700 font-mono text-sm leading-relaxed">{{ quiz.questions }}</pre>
+          </div>
+          
+          <!-- If we have parsed questions, show them in a structured way -->
+          {% if quiz.parsed_questions %}
+            <div class="mt-8 border-t pt-8">
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">📋 Structured Questions:</h3>
+              {% for question in quiz.parsed_questions %}
+                <div class="mb-6 p-4 border border-gray-200 rounded-lg">
+                  <h4 class="font-semibold text-gray-800 mb-2">Question {{ question.order }}:</h4>
+                  <p class="text-gray-700 mb-3">{{ question.text }}</p>
+                  
+                  {% if question.type == 'multiple_choice' %}
+                    <div class="ml-4">
+                      {% for choice in question.choices %}
+                        <p class="{% if choice.letter == question.correct_answer %}text-green-600 font-semibold{% else %}text-gray-600{% endif %}">
+                          {{ choice.letter }}) {{ choice.text }}
+                        </p>
+                      {% endfor %}
+                      <p class="text-sm text-green-600 mt-2"><strong>Correct Answer:</strong> {{ question.correct_answer }}</p>
+                      {% if question.explanation %}
+                        <p class="text-sm text-gray-500 mt-1"><strong>Explanation:</strong> {{ question.explanation }}</p>
+                      {% endif %}
+                    </div>
+                  {% elif question.type == 'true_false' %}
+                    <p class="text-sm text-green-600 ml-4"><strong>Answer:</strong> {{ question.correct_answer|yesno:"True,False" }}</p>
+                    {% if question.explanation %}
+                      <p class="text-sm text-gray-500 ml-4 mt-1"><strong>Explanation:</strong> {{ question.explanation }}</p>
+                    {% endif %}
+                  {% elif question.type == 'short_answer' %}
+                    {% if question.sample_answer %}
+                      <p class="text-sm text-gray-600 ml-4"><strong>Sample Answer:</strong> {{ question.sample_answer }}</p>
+                    {% endif %}
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% else %}
+          <div class="text-red-500 p-4 bg-red-50 rounded-lg">
+            <p>❌ No quiz questions were generated. Please try again with a different topic.</p>
+          </div>
+        {% endif %}
+        
+      {% elif type == 'rubric' %}
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">
+          Assignment Grading Rubric
+        </h2>
+        {% if rubric %}
+          <div class="prose max-w-none">
+            <pre class="whitespace-pre-wrap text-gray-700 font-mono text-sm leading-relaxed">{{ rubric }}</pre>
+          </div>
+        {% else %}
+          <div class="text-red-500 p-4 bg-red-50 rounded-lg">
+            <p>❌ No rubric was generated. Please try again.</p>
+          </div>
+        {% endif %}
+        
+      {% elif type == 'explanation' %}
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">
+          Explanation of {{ concept|default:"Concept" }}
+        </h2>
+        {% if explanation %}
+          <div class="prose max-w-none">
+            <pre class="whitespace-pre-wrap text-gray-700 font-mono text-sm leading-relaxed">{{ explanation }}</pre>
+          </div>
+        {% else %}
+          <div class="text-red-500 p-4 bg-red-50 rounded-lg">
+            <p>❌ No explanation was generated. Please try again.</p>
+          </div>
+        {% endif %}
+        
+      {% elif type == 'syllabus' %}
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">
+          Syllabus for {{ course_title|default:"Course" }}
+        </h2>
+        {% if syllabus %}
+          <div class="prose max-w-none">
+            <pre class="whitespace-pre-wrap text-gray-700 font-mono text-sm leading-relaxed">{{ syllabus }}</pre>
+          </div>
+        {% else %}
+          <div class="text-red-500 p-4 bg-red-50 rounded-lg">
+            <p>❌ No syllabus was generated. Please try again.</p>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="mt-8 flex justify-between items-center">
+      <a href="{% url 'ai_dashboard' %}"
+         class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+        ← Back to AI Tools
+      </a>
+      
+      <div class="flex space-x-4">
+        {% if type == 'quiz' and show_save_button and quiz.parsed_questions %}
+          <a href="{% url 'create_quiz_from_ai' %}"
+             class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Save to Course
+          </a>
+        {% endif %}
+        
+        <a href="{% url 'instructor_dashboard' %}"
+           class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+          ← Back to Dashboard
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

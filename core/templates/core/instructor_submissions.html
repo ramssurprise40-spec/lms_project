@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+{% block title %}Instructor Submissions{% endblock %}
+{% block content %}
+<div class="container mx-auto mt-8">
+    <h1 class="text-3xl font-bold mb-6">Submissions for Your Quizzes</h1>
+
+    {% if exams %}
+        {% for exam in exams %}
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-2xl font-semibold mb-4">{{ exam.title }}</h2>
+                {% if exam.submissions.all %}
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 border-b">Student</th>
+                                <th class="py-2 px-4 border-b">Grade</th>
+                                <th class="py-2 px-4 border-b">Submitted At</th>
+                                <th class="py-2 px-4 border-b">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for submission in exam.submissions.all %}
+                                <tr>
+                                    <td class="py-2 px-4 border-b">{{ submission.student.get_full_name }}</td>
+                                    <td class="py-2 px-4 border-b">{{ submission.grade|default:"Not Graded" }}</td>
+                                    <td class="py-2 px-4 border-b">{{ submission.submitted_at|date:"M d, Y H:i" }}</td>
+                                    <td class="py-2 px-4 border-b">
+                                        <a href="{% url 'review_submission' submission.pk %}" class="text-blue-500 hover:underline">Review</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p class="text-gray-600">No submissions for this quiz yet.</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="text-gray-600">You have not created any quizzes yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

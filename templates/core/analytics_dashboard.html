@@ -1,0 +1,89 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Analytics Dashboard{% endblock %}
+
+{% block content %}
+cdiv class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">Analytics Dashboard</h1>
+            <p class="mt-2 text-gray-600">Insights and reports for {{ request.user.role }}</p>
+        </div>
+
+        <!-- Analytics Summary -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-chart-line text-blue-600 text-2xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-500">Total Users</p>
+                        <p class="text-2xl font-bold text-gray-900">{{ total_users }}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-graduation-cap text-green-600 text-2xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-500">Total Courses</p>
+                        <p class="text-2xl font-bold text-gray-900">{{ total_courses }}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-user-friends text-purple-600 text-2xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-500">Total Enrollments</p>
+                        <p class="text-2xl font-bold text-gray-900">{{ total_enrollments }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional analytics based on role -->
+        {% if request.user.role == 'instructor' %}
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold text-gray-900">Instructor Specific Analytics</h2>
+            <div class="mt-4">
+                <p>Total Students in My Courses: {{ total_students }}</p>
+                <p>Pending Submissions: {{ pending_submissions }}</p>
+                <h3 class="mt-4 text-lg font-bold text-gray-900">Recent Submissions</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    {% for submission in recent_submissions %}
+                    <li>{{ submission.student.get_full_name }} submitted {{ submission.exam.title }}</li>
+                    {% empty %}
+                    <li>No recent submissions.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% elif request.user.role == 'admin' %}
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold text-gray-900">Admin Specific Analytics</h2>
+            <div class="mt-4">
+                <h3 class="mt-4 text-lg font-bold text-gray-900">Recent Enrollments</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    {% for enrollment in recent_enrollments %}
+                    <li>{{ enrollment.student.get_full_name }} enrolled in {{ enrollment.course.title }}</li>
+                    {% empty %}
+                    <li>No recent enrollments.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+

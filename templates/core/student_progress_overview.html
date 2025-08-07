@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Progress Overview{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Progress Overview</h1>
+
+    {% for item in progress_data %}
+    <div class="progress-box">
+        <h2>{{ item.course.title }}</h2>
+        <p>Overall Progress: {{ item.progress.overall_progress }}%</p>
+        <p>Last Accessed: {{ item.progress.last_accessed }}</p>
+    </div>
+    {% endfor %}
+
+    {% empty %}
+    <p>No enrolled courses found.</p>
+    {% endfor %}
+
+</div>
+{% endblock %}

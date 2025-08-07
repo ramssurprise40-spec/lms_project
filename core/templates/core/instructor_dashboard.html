@@ -1,0 +1,71 @@
+{% extends 'core/base.html' %}
+{% block title %}Instructor Dashboard{% endblock %}
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">
+                Welcome, Instructor {{ user.username }}!
+            </h1>
+            <p class="text-lg text-gray-600">Manage your courses and use AI-powered teaching tools</p>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <a href="{% url 'course_create' %}" 
+               class="bg-blue-600 text-white rounded-xl p-6 hover:bg-blue-700 transition-colors shadow-lg">
+                <div class="text-2xl mb-2"></div>
+                <h3 class="text-lg font-semibold">Create Course</h3>
+                <p class="text-blue-100 text-sm">Start a new course</p>
+            </a>
+            
+            <a href="{% url 'ai_dashboard' %}" 
+               class="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl p-6 hover:from-purple-700 hover:to-pink-700 transition-colors shadow-lg">
+                <div class="text-2xl mb-2"></div>
+                <h3 class="text-lg font-semibold">AI Teaching Tools</h3>
+                <p class="text-purple-100 text-sm">Generate content with AI</p>
+            </a>
+            
+            <a href="{% url 'course_list' %}" 
+               class="bg-green-600 text-white rounded-xl p-6 hover:bg-green-700 transition-colors shadow-lg">
+                <div class="text-2xl mb-2"></div>
+                <h3 class="text-lg font-semibold">View All Courses</h3>
+                <p class="text-green-100 text-sm">Browse course catalog</p>
+            </a>
+        </div>
+
+        <!-- Your Courses -->
+        <div class="bg-white rounded-xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Your Courses</h2>
+            {% if user.courses.all %}
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {% for course in user.courses.all %}
+                        <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                                <a href="{% url 'course_detail' course.pk %}" class="hover:text-blue-600">
+                                    {{ course.title }}
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-3">{{ course.description|truncatewords:15 }}</p>
+                            <div class="text-xs text-gray-500">
+                                Created: {{ course.created_at|date:"M d, Y" }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="text-center py-8">
+                    <div class="text-6xl mb-4"></div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">No courses yet</h3>
+                    <p class="text-gray-600 mb-4">Create your first course to get started</p>
+                    <a href="{% url 'course_create' %}" 
+                       class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        Create First Course
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

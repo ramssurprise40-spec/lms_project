@@ -1,0 +1,17 @@
+
+
+{% extends 'core/base.html' %}
+
+{% block title %}Supprimer le cours{% endblock %}
+
+{% block content %}
+<h2>Confirmer la suppression</h2>
+
+<p>Voulez-vous vraiment supprimer le cours "{{ object.title }}" ? Cette action est irréversible.</p>
+
+<form method="post" class="w-50 mx-auto">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a href="{% url 'instructor_dashboard_template' %}" class="btn btn-secondary">Annuler</a>
+</form>
+{% endblock %}

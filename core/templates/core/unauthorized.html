@@ -1,0 +1,9 @@
+{% extends 'core/base.html' %}
+{% block title %}Unauthorized{% endblock %}
+{% block content %}
+<div class="text-center py-12">
+  <h1 class="text-3xl font-bold text-red-600 mb-4">⛔ Unauthorized</h1>
+  <p>You do not have permission to access this page.</p>
+  <a href="{% url 'home' %}" class="mt-4 inline-block text-indigo-600 underline">Return to Home</a>
+</div>
+{% endblock %}

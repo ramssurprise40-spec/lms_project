@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="container mx-auto p-8">
+    <h1 class="text-3xl font-bold mb-4">My Exam Submissions</h1>
+    <ul class="list-disc ml-6">
+        {% for submission in submissions %}
+            <li class="mb-4">
+                <strong>{{ submission.exam.title }}</strong><br>
+                Grade: {% if submission.grade %}{{ submission.grade }}%{% else %}Pending{% endif %}<br>
+                Submitted: {{ submission.submitted_at|date:"M d, Y" }}
+            </li>
+        {% empty %}
+            <li>No submissions yet.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

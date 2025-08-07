@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% block title %}Exams{% endblock %}
+{% block content %}
+<h2 class="text-2xl font-bold mb-4">Exams</h2>
+<ul class="grid gap-4">
+  {% for exam in exams %}
+    <li class="bg-white p-4 rounded shadow">
+      <h3 class="font-semibold">{{ exam.title }}</h3>
+      <p>Course: {{ exam.course.title }}</p>
+      <a href="{% url 'submit_exam' exam.pk %}" class="text-blue-600 underline">Submit</a>
+    </li>
+  {% empty %}
+    <li>No exams found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

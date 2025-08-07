@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-3">{{ exam.title }}</h2>
+    
+    <div class="mb-4">
+        <strong>Course:</strong> {{ exam.course.title }}<br>
+        <strong>Instructions:</strong> {{ exam.instructions }}
+    </div>
+
+    {% if exam.generated_content %}
+        <div class="alert alert-info">
+            <pre>{{ exam.generated_content }}</pre>
+        </div>
+    {% else %}
+        <p class="text-muted">No generated content available for this exam.</p>
+    {% endif %}
+
+    {% if user.role == 'student' %}
+        <hr>
+        <h4>Submit Your Answers</h4>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit Exam</button>
+        </form>
+    {% endif %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} mt-3">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

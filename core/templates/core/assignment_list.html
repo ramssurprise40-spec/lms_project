@@ -1,0 +1,16 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="container mx-auto p-8">
+    <h1 class="text-3xl font-bold mb-4">Assignments</h1>
+    <ul class="list-disc ml-6">
+        {% for assignment in assignments %}
+            <li class="mb-2">
+                {{ assignment.title }} - {{ assignment.description }}
+            </li>
+        {% empty %}
+            <li>No assignments available.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Course Categories{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">Course Categories</h1>
+            <p class="mt-2 text-gray-600">Browse courses by category</p>
+        </div>
+
+        <!-- Categories Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {% for category in categories %}
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                            <i class="{{ category.icon }} text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">{{ category.name }}</h3>
+                            <p class="text-sm text-gray-500">{{ category.courses.count }} courses</p>
+                        </div>
+                    </div>
+                    
+                    {% if category.description %}
+                    <p class="text-gray-600 mb-4">{{ category.description }}</p>
+                    {% endif %}
+                    
+                    <a href="{% url 'category_courses' category.id %}" 
+                       class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors">
+                        View Courses
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Subcategories if any -->
+                {% if category.subcategories.exists %}
+                <div class="border-t border-gray-200 px-6 py-3">
+                    <p class="text-sm text-gray-500 mb-2">Subcategories:</p>
+                    <div class="flex flex-wrap gap-2">
+                        {% for subcategory in category.subcategories.all %}
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                            {{ subcategory.name }}
+                        </span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            {% empty %}
+            <div class="col-span-full">
+                <div class="text-center py-12">
+                    <i class="fas fa-folder-open text-gray-400 text-6xl mb-4"></i>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">No Categories Available</h3>
+                    <p class="text-gray-600">Course categories will appear here when they are created.</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

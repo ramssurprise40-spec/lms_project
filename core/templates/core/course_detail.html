@@ -1,0 +1,221 @@
+{% extends 'core/base.html' %}
+{% block title %}{{ course.title }} - Details{% endblock %}
+{% block content %}
+
+<!-- Course Header -->
+<div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex items-start justify-between">
+            <div class="flex-1">
+                <h1 class="text-4xl font-bold mb-4">{{ course.title }}</h1>
+                <p class="text-blue-100 text-lg mb-4">{{ course.description }}</p>
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-user-tie text-blue-200 mr-2"></i>
+                        <span class="text-blue-100">{{ course.instructor.get_full_name }}</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-users text-blue-200 mr-2"></i>
+                        <span class="text-blue-100">{{ course.enrolled_students.count }} enrolled</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-clock text-blue-200 mr-2"></i>
+                        <span class="text-blue-100">{{ course.duration|default:"Self-paced" }}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="ml-8">
+                {% if user.is_authenticated and user.role == 'student' and not is_enrolled %}
+                    <form action="{% url 'enroll_course' course.id %}" method="post" class="mb-4">
+                        {% csrf_token %}
+                        <button type="submit" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-plus-circle mr-2"></i>Enroll Now
+                        </button>
+                    </form>
+                {% elif user.is_authenticated and user.role == 'instructor' and user == course.instructor %}
+                    <div class="space-y-2">
+                        <a href="{% url 'manage_course_content' course.id %}" class="block bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-lg text-center hover:bg-white/30 transition-colors">
+                            <i class="fas fa-edit mr-2"></i>Manage Content
+                        </a>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                            <div class="text-2xl font-bold">{{ course.materials.count|default:"0" }}</div>
+                            <div class="text-sm text-blue-200">Materials</div>
+                        </div>
+                    </div>
+                {% elif user.is_authenticated and user.role == 'student' and is_enrolled %}
+                    <div class="bg-green-500/20 backdrop-blur-sm rounded-lg p-4 text-center">
+                        <i class="fas fa-check-circle text-green-200 text-2xl mb-2"></i>
+                        <div class="text-white font-semibold">Enrolled</div>
+                        <div class="text-green-200 text-sm">Access all content below</div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Course Content -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
+    {% if user.is_authenticated and is_enrolled or user == course.instructor %}
+        <!-- Course Materials -->
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100 mb-8">
+            <div class="p-6 border-b border-gray-100">
+                <h3 class="text-xl font-semibold text-gray-900 flex items-center">
+                    <i class="fas fa-book-open text-blue-500 mr-3"></i>
+                    Course Materials
+                </h3>
+            </div>
+            <div class="p-6">
+                {% if course.materials.all %}
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {% for material in course.materials.all %}
+                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200 hover:shadow-md transition-shadow">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-blue-100 p-2 rounded-lg mr-3">
+                                    {% if material.material_type == 'video' %}
+                                        <i class="fas fa-video text-blue-600"></i>
+                                    {% elif material.material_type == 'document' %}
+                                        <i class="fas fa-file-alt text-blue-600"></i>
+                                    {% elif material.material_type == 'presentation' %}
+                                        <i class="fas fa-file-powerpoint text-blue-600"></i>
+                                    {% elif material.material_type == 'audio' %}
+                                        <i class="fas fa-file-audio text-blue-600"></i>
+                                    {% elif material.material_type == 'link' %}
+                                        <i class="fas fa-external-link-alt text-blue-600"></i>
+                                    {% else %}
+                                        <i class="fas fa-book text-blue-600"></i>
+                                    {% endif %}
+                                </div>
+                                <span class="text-xs font-medium text-gray-500 bg-gray-200 px-2 py-1 rounded-full">
+                                    {{ material.material_type|capfirst }}
+                                </span>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">{{ material.title }}</h4>
+                            <p class="text-sm text-gray-600 mb-4">{{ material.description|truncatechars:100 }}</p>
+                            <a href="{% url 'access_material' material.id %}" class="block w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-center">
+                                <i class="fas fa-play mr-2"></i>Access Material
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="text-center py-8">
+                        <i class="fas fa-folder-open text-4xl text-gray-300 mb-4"></i>
+                        <h4 class="text-lg font-medium text-gray-900 mb-2">No materials yet</h4>
+                        <p class="text-gray-600">The instructor is still preparing course materials.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <!-- Assignments Section -->
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100 mb-8">
+            <div class="p-6 border-b border-gray-100">
+                <h3 class="text-xl font-semibold text-gray-900 flex items-center">
+                    <i class="fas fa-tasks text-green-500 mr-3"></i>
+                    Assignments
+                </h3>
+            </div>
+            <div class="p-6">
+                {% if course.assignments.all %}
+                    <div class="space-y-4">
+                        {% for assignment in course.assignments.all %}
+                        <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">{{ assignment.title }}</h4>
+                                    <p class="text-gray-600 text-sm">{{ assignment.description }}</p>
+                                    {% if assignment.due_date %}
+                                        <p class="text-sm text-orange-600 mt-2">
+                                            <i class="fas fa-calendar-alt mr-1"></i>Due: {{ assignment.due_date|date:"M d, Y" }}
+                                        </p>
+                                    {% endif %}
+                                </div>
+                                <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                                    <i class="fas fa-arrow-right mr-2"></i>Start
+                                </button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="text-center py-8">
+                        <i class="fas fa-clipboard-list text-4xl text-gray-300 mb-4"></i>
+                        <h4 class="text-lg font-medium text-gray-900 mb-2">No assignments yet</h4>
+                        <p class="text-gray-600">Assignments will appear here when they're available.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <!-- Exams Section -->
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100">
+            <div class="p-6 border-b border-gray-100">
+                <h3 class="text-xl font-semibold text-gray-900 flex items-center">
+                    <i class="fas fa-graduation-cap text-purple-500 mr-3"></i>
+                    Exams
+                </h3>
+            </div>
+            <div class="p-6">
+                {% if course.exams.all %}
+                    <div class="space-y-4">
+                        {% for exam in course.exams.all %}
+                        <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">{{ exam.title }}</h4>
+                                    <p class="text-gray-600 text-sm">{{ exam.description|default:"No description available" }}</p>
+                                    <div class="flex items-center space-x-4 mt-2 text-sm text-gray-500">
+                                        {% if exam.duration %}
+                                            <span><i class="fas fa-clock mr-1"></i>{{ exam.duration }} minutes</span>
+                                        {% endif %}
+                                        {% if exam.total_marks %}
+                                            <span><i class="fas fa-star mr-1"></i>{{ exam.total_marks }} marks</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <a href="{% url 'submit_exam' exam.pk %}" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                                    <i class="fas fa-play mr-2"></i>Take Exam
+                                </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="text-center py-8">
+                        <i class="fas fa-file-alt text-4xl text-gray-300 mb-4"></i>
+                        <h4 class="text-lg font-medium text-gray-900 mb-2">No exams yet</h4>
+                        <p class="text-gray-600">Exams will appear here when they're scheduled.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% else %}
+        <!-- Enrollment Required Message -->
+        <div class="bg-white rounded-xl shadow-lg border border-gray-100">
+            <div class="p-12 text-center">
+                <i class="fas fa-lock text-6xl text-gray-300 mb-6"></i>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Enrollment Required</h3>
+                <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+                    To access course materials, assignments, and exams, you need to enroll in this course. 
+                    Join thousands of students already learning with us!
+                </p>
+                {% if user.is_authenticated and user.role == 'student' %}
+                    <form action="{% url 'enroll_course' course.id %}" method="post" class="inline">
+                        {% csrf_token %}
+                        <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            <i class="fas fa-plus-circle mr-2"></i>Enroll Now
+                        </button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block">
+                        <i class="fas fa-sign-in-alt mr-2"></i>Login to Enroll
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

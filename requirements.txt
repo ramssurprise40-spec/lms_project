@@ -1,0 +1,91 @@
+# Core Django requirements
+Django>=4.2,<6.0
+
+# Django REST Framework
+djangorestframework>=3.14.0
+djangorestframework-simplejwt>=5.2.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Database support
+psycopg2-binary>=2.9.0
+
+# Image and file processing
+Pillow>=9.0.0
+
+# AI integration
+google-generativeai>=0.5.0
+
+# API documentation
+drf-spectacular>=0.26.0
+
+# Enhanced UI and Forms
+django-crispy-forms>=2.0
+crispy-tailwind>=0.5.0
+django-widget-tweaks>=1.4.12
+
+# Rich Text Editor (Updated to CKEditor 5)
+django-ckeditor-5>=0.2.18
+
+# File Management
+django-storages>=1.13.0
+boto3>=1.26.0  # For AWS S3 storage
+
+# Search and Filtering
+django-filter>=22.1
+django-elasticsearch-dsl>=7.2.0
+
+# Cache and Performance
+django-redis>=5.2.0
+django-debug-toolbar>=4.0.0
+
+# Notifications and Messaging
+django-notifications-hq>=1.7.0
+channels>=4.0.0
+channels-redis>=4.1.0
+
+# Calendar and Scheduling
+django-scheduler>=0.9.3
+
+# Import/Export
+django-import-export>=3.2.0
+
+# Analytics and Tracking
+django-analytical>=3.1.0
+
+# Security
+django-ratelimit>=4.0.0
+django-axes>=6.0.0
+
+# Development tools
+django-cors-headers>=4.0.0
+django-extensions>=3.2.0
+
+# Celery for background tasks
+celery>=5.2.0
+django-celery-beat>=2.4.0
+django-celery-results>=2.4.0
+
+# Testing
+pytest>=7.0.0
+pytest-django>=4.5.0
+pytest-cov>=4.0.0
+factory-boy>=3.2.0
+
+# Code quality
+black>=22.0.0
+flake8>=5.0.0
+isort>=5.10.0
+mypy>=1.0.0
+django-stubs>=4.2.0
+
+# Production server
+gunicorn>=21.2.0
+gevent>=23.9.0
+
+# Database drivers
+mysqlclient>=2.2.0  # For MySQL support
+
+# Monitoring and error tracking
+sentry-sdk[django]>=1.32.0

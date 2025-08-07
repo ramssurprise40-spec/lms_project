@@ -1,0 +1,143 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}AI Lesson Planner{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">
+                📚 AI Lesson Planner
+            </h1>
+            <p class="text-lg text-gray-600">
+                Generate comprehensive lesson plans powered by Gemini AI
+            </p>
+        </div>
+
+        <!-- Lesson Plan Form -->
+        <div class="bg-white rounded-xl shadow-lg p-8">
+            <form method="post" class="space-y-6">
+                {% csrf_token %}
+                
+                <div>
+                    <label for="topic" class="block text-sm font-medium text-gray-700 mb-2">
+                        Lesson Topic *
+                    </label>
+                    <input type="text" 
+                           id="topic" 
+                           name="topic" 
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                           placeholder="e.g., Introduction to Photosynthesis, World War II, Quadratic Equations">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="duration" class="block text-sm font-medium text-gray-700 mb-2">
+                            Lesson Duration *
+                        </label>
+                        <select id="duration" 
+                                name="duration" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">Select duration</option>
+                            <option value="30 minutes">30 minutes</option>
+                            <option value="45 minutes">45 minutes</option>
+                            <option value="60 minutes">60 minutes</option>
+                            <option value="90 minutes">90 minutes</option>
+                            <option value="2 hours">2 hours</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="difficulty" class="block text-sm font-medium text-gray-700 mb-2">
+                            Difficulty Level *
+                        </label>
+                        <select id="difficulty" 
+                                name="difficulty" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">Select level</option>
+                            <option value="Elementary">Elementary (K-5)</option>
+                            <option value="Middle School">Middle School (6-8)</option>
+                            <option value="High School">High School (9-12)</option>
+                            <option value="Undergraduate">Undergraduate</option>
+                            <option value="Graduate">Graduate</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Tips Section -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <h3 class="text-sm font-medium text-blue-800 mb-2">💡 Tips for Better Results:</h3>
+                    <ul class="text-sm text-blue-700 space-y-1">
+                        <li>• Be specific about your topic (e.g., "Mitosis vs Meiosis" rather than just "Biology")</li>
+                        <li>• Consider your students' prior knowledge level</li>
+                        <li>• The AI will generate objectives, activities, and assessments</li>
+                    </ul>
+                </div>
+
+                <div class="flex justify-between items-center pt-6">
+                    <a href="{% url 'ai_dashboard' %}" 
+                       class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+                        ← Back to AI Tools
+                    </a>
+                    
+                    <button type="submit" 
+                            class="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        Generate Lesson Plan
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Sample Output Preview -->
+        <div class="mt-8 bg-white rounded-xl shadow-lg p-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">📋 What You'll Get:</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-3">
+                    <div class="flex items-start">
+                        <span class="text-green-500 mr-3">✓</span>
+                        <span class="text-gray-600">Clear learning objectives</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-green-500 mr-3">✓</span>
+                        <span class="text-gray-600">Required materials list</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-green-500 mr-3">✓</span>
+                        <span class="text-gray-600">Structured timeline</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-green-500 mr-3">✓</span>
+                        <span class="text-gray-600">Engaging activities</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-start">
+                        <span class="text-green-500 mr-3">✓</span>
+                        <span class="text-gray-600">Assessment strategies</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-green-500 mr-3">✓</span>
+                        <span class="text-gray-600">Homework suggestions</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-green-500 mr-3">✓</span>
+                        <span class="text-gray-600">Discussion questions</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-green-500 mr-3">✓</span>
+                        <span class="text-gray-600">Extension activities</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

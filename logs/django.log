@@ -1,0 +1,2472 @@
+INFO 2025-08-05 18:22:41,424 autoreload 8332 10888 Watching for file changes with StatReloader
+ERROR 2025-08-05 18:23:01,802 log 8332 388 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 81, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\debug_toolbar\middleware.py", line 145, in __call__
+    return self._postprocess(request, response, toolbar)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\debug_toolbar\middleware.py", line 187, in _postprocess
+    rendered = toolbar.render_toolbar()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\debug_toolbar\toolbar.py", line 93, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 92, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ERROR 2025-08-05 18:23:01,913 basehttp 8332 388 "GET / HTTP/1.1" 500 144618
+ERROR 2025-08-05 18:24:08,779 log 8332 12424 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 81, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\debug_toolbar\middleware.py", line 145, in __call__
+    return self._postprocess(request, response, toolbar)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\debug_toolbar\middleware.py", line 187, in _postprocess
+    rendered = toolbar.render_toolbar()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\debug_toolbar\toolbar.py", line 93, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 92, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+ERROR 2025-08-05 18:24:08,786 basehttp 8332 12424 "GET / HTTP/1.1" 500 144399
+INFO 2025-08-05 18:25:14,998 autoreload 4388 13044 Watching for file changes with StatReloader
+INFO 2025-08-05 18:25:31,665 basehttp 4388 11668 "GET / HTTP/1.1" 200 30057
+INFO 2025-08-05 18:25:31,789 basehttp 4388 11668 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 29468
+INFO 2025-08-05 18:25:31,793 basehttp 4388 12552 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14879
+INFO 2025-08-05 18:25:32,010 basehttp 4388 12552 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-08-05 18:25:32,464 basehttp 4388 12552 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4700
+INFO 2025-08-05 18:26:11,411 basehttp 4388 12552 "GET /login/ HTTP/1.1" 200 27572
+INFO 2025-08-05 18:26:31,383 basehttp 4388 12552 "POST /login/ HTTP/1.1" 200 14043
+INFO 2025-08-05 18:26:31,442 basehttp 4388 11668 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-05 18:26:31,456 basehttp 4388 10872 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:26:31,457 basehttp 4388 5972 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-05 18:26:31,459 basehttp 4388 12552 "GET /static/debug_toolbar/js/redirect.js HTTP/1.1" 200 48
+INFO 2025-08-05 18:26:31,473 basehttp 4388 12552 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:26:35,374 basehttp 4388 12552 "GET /login/ HTTP/1.1" 200 29422
+INFO 2025-08-05 18:26:38,282 basehttp 4388 12552 "GET /register/ HTTP/1.1" 200 28181
+INFO 2025-08-05 18:26:46,791 basehttp 4388 12552 "GET /courses/ HTTP/1.1" 200 53631
+INFO 2025-08-05 18:26:55,946 basehttp 4388 12552 "GET /ai/ HTTP/1.1" 200 35939
+INFO 2025-08-05 18:26:58,796 basehttp 4388 12552 "GET /courses/ HTTP/1.1" 200 53631
+INFO 2025-08-05 18:27:01,825 basehttp 4388 12552 "GET /instructor/dashboard/ HTTP/1.1" 200 30868
+INFO 2025-08-05 18:27:12,232 basehttp 4388 12552 "GET /ai/ HTTP/1.1" 200 35939
+INFO 2025-08-05 18:27:23,883 basehttp 4388 12552 "GET /ai/concept-explainer/ HTTP/1.1" 200 31490
+INFO 2025-08-05 18:27:23,946 basehttp 4388 5972 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:27:23,946 basehttp 4388 12552 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-05 18:27:24,076 basehttp 4388 5972 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-05 18:27:24,284 basehttp 4388 5972 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:27:44,088 basehttp 4388 5972 "GET /logout/ HTTP/1.1" 200 14036
+INFO 2025-08-05 18:27:44,149 basehttp 4388 5972 "GET /static/debug_toolbar/js/redirect.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:27:51,611 basehttp 4388 5972 "GET /instructor/dashboard/ HTTP/1.1" 200 14117
+INFO 2025-08-05 18:27:53,743 basehttp 4388 5972 "GET /login/?next=/instructor/dashboard/ HTTP/1.1" 200 27599
+INFO 2025-08-05 18:28:07,545 basehttp 4388 5972 "POST /login/?next=/instructor/dashboard/ HTTP/1.1" 200 14071
+INFO 2025-08-05 18:28:11,193 basehttp 4388 5972 "GET /dashboard/ HTTP/1.1" 200 14068
+INFO 2025-08-05 18:29:40,050 autoreload 6784 11024 Watching for file changes with StatReloader
+INFO 2025-08-05 18:30:02,217 basehttp 6784 12900 "GET / HTTP/1.1" 200 31587
+INFO 2025-08-05 18:30:02,285 basehttp 6784 12900 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-05 18:30:02,289 basehttp 6784 4216 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:30:02,388 basehttp 6784 4216 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-05 18:30:02,517 basehttp 6784 4216 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:30:09,267 basehttp 6784 4216 "GET /courses/ HTTP/1.1" 200 53427
+INFO 2025-08-05 18:30:18,061 basehttp 6784 4216 "GET /student/dashboard/ HTTP/1.1" 200 42938
+INFO 2025-08-05 18:30:22,508 basehttp 6784 4216 "GET /student/quizzes/ HTTP/1.1" 200 40808
+WARNING 2025-08-05 18:30:43,001 log 6784 4216 Not Found: /adm/
+WARNING 2025-08-05 18:30:43,002 basehttp 6784 4216 "GET /adm/ HTTP/1.1" 404 24611
+INFO 2025-08-05 18:30:53,233 basehttp 6784 4216 "GET /admin/ HTTP/1.1" 200 14065
+INFO 2025-08-05 18:30:53,285 basehttp 6784 4216 "GET /static/debug_toolbar/js/redirect.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:30:56,636 basehttp 6784 4216 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 17261
+INFO 2025-08-05 18:31:24,957 basehttp 6784 4216 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 14050
+INFO 2025-08-05 18:31:25,034 basehttp 6784 4216 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-05 18:31:25,035 basehttp 6784 12900 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:31:25,042 basehttp 6784 9840 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-05 18:31:25,050 basehttp 6784 9840 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:34:34,022 autoreload 11740 6348 Watching for file changes with StatReloader
+WARNING 2025-08-05 18:34:50,788 log 11740 3756 Forbidden (CSRF token from POST incorrect.): /admin/login/
+WARNING 2025-08-05 18:34:51,038 basehttp 11740 3756 "POST /admin/login/?next=/admin/ HTTP/1.1" 403 16022
+INFO 2025-08-05 18:34:51,088 basehttp 11740 3756 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-05 18:34:51,098 basehttp 11740 5972 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:34:51,105 basehttp 11740 11780 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-05 18:34:51,122 basehttp 11740 11780 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:34:57,129 basehttp 11740 11780 "GET / HTTP/1.1" 200 30609
+INFO 2025-08-05 18:35:02,642 basehttp 11740 11780 "GET /admin/ HTTP/1.1" 200 33252
+INFO 2025-08-05 18:35:17,598 basehttp 11740 11780 "GET / HTTP/1.1" 200 30609
+INFO 2025-08-05 18:35:20,816 basehttp 11740 11780 "GET /admin/ HTTP/1.1" 200 33252
+INFO 2025-08-05 18:35:22,756 basehttp 11740 11780 "POST /admin/logout/ HTTP/1.1" 200 14037
+INFO 2025-08-05 18:35:22,835 basehttp 11740 11780 "GET /static/debug_toolbar/js/redirect.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:35:25,987 basehttp 11740 11780 "GET /login/ HTTP/1.1" 200 27572
+INFO 2025-08-05 18:35:30,467 basehttp 11740 11780 "GET /admin/ HTTP/1.1" 200 14067
+INFO 2025-08-05 18:35:33,276 basehttp 11740 11780 "GET /logout/ HTTP/1.1" 200 14034
+INFO 2025-08-05 18:36:34,415 autoreload 3824 2784 Watching for file changes with StatReloader
+INFO 2025-08-05 18:36:48,872 basehttp 3824 11316 "GET / HTTP/1.1" 200 30460
+INFO 2025-08-05 18:36:48,935 basehttp 3824 11316 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-05 18:36:48,941 basehttp 3824 12432 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:36:49,061 basehttp 3824 12432 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-05 18:36:49,183 basehttp 3824 12432 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:36:57,911 basehttp 3824 12432 "GET /admin/ HTTP/1.1" 200 14067
+INFO 2025-08-05 18:37:02,671 basehttp 3824 12432 "GET / HTTP/1.1" 200 30459
+INFO 2025-08-05 18:37:18,862 basehttp 3824 12432 "GET /admin/ HTTP/1.1" 200 14067
+INFO 2025-08-05 18:37:18,918 basehttp 3824 12432 "GET /static/debug_toolbar/js/redirect.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:37:21,033 basehttp 3824 12432 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 17744
+INFO 2025-08-05 18:37:28,681 basehttp 3824 12432 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 14049
+INFO 2025-08-05 18:46:17,708 autoreload 5204 9432 Watching for file changes with StatReloader
+INFO 2025-08-05 18:46:33,292 basehttp 5204 8936 "GET / HTTP/1.1" 200 30609
+INFO 2025-08-05 18:46:33,348 basehttp 5204 8936 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-05 18:46:33,351 basehttp 5204 10628 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:46:33,696 basehttp 5204 10628 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-05 18:46:33,873 basehttp 5204 10628 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:46:37,596 basehttp 5204 10628 "GET /courses/ HTTP/1.1" 200 63512
+INFO 2025-08-05 18:46:45,421 basehttp 5204 10628 "POST /courses/1/enroll/ HTTP/1.1" 200 14058
+INFO 2025-08-05 18:46:45,483 basehttp 5204 10628 "GET /static/debug_toolbar/js/redirect.js HTTP/1.1" 304 0
+INFO 2025-08-05 18:46:48,427 basehttp 5204 10628 "GET /courses/1/ HTTP/1.1" 200 26926
+INFO 2025-08-05 18:46:55,614 basehttp 5204 10628 "GET /courses/ HTTP/1.1" 200 63512
+INFO 2025-08-05 18:46:58,245 basehttp 5204 10628 "POST /courses/3/enroll/ HTTP/1.1" 200 14057
+INFO 2025-08-05 18:47:01,542 basehttp 5204 10628 "GET /courses/3/ HTTP/1.1" 200 26930
+INFO 2025-08-05 18:47:08,764 basehttp 5204 10628 "GET /student/dashboard/ HTTP/1.1" 200 36089
+INFO 2025-08-05 18:47:20,837 basehttp 5204 10628 "GET /student/quizzes/ HTTP/1.1" 200 34644
+INFO 2025-08-05 18:47:27,182 basehttp 5204 10628 "GET /student/quiz/1/ HTTP/1.1" 200 28110
+INFO 2025-08-05 18:47:33,207 basehttp 5204 10628 "GET /student/dashboard/ HTTP/1.1" 200 36089
+INFO 2025-08-05 18:47:52,215 basehttp 5204 10628 "GET /courses/ HTTP/1.1" 200 63512
+INFO 2025-08-05 18:48:04,930 basehttp 5204 10628 "POST /courses/2/enroll/ HTTP/1.1" 200 14057
+INFO 2025-08-05 18:48:08,102 basehttp 5204 10628 "GET /courses/2/ HTTP/1.1" 200 26922
+INFO 2025-08-05 18:48:17,216 basehttp 5204 10628 "GET /logout/ HTTP/1.1" 200 14036
+INFO 2025-08-05 18:48:24,701 basehttp 5204 10628 "GET /admin/ HTTP/1.1" 200 14067
+INFO 2025-08-05 18:48:29,016 basehttp 5204 10628 "GET /admin/ HTTP/1.1" 200 14067
+INFO 2025-08-05 18:48:29,370 basehttp 5204 10628 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 17744
+INFO 2025-08-05 18:48:38,506 basehttp 5204 10628 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 14048
+INFO 2025-08-05 19:01:29,530 autoreload 12576 6916 Watching for file changes with StatReloader
+INFO 2025-08-05 19:01:40,366 basehttp 12576 1048 "GET / HTTP/1.1" 200 30609
+INFO 2025-08-05 19:01:40,430 basehttp 12576 1048 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-05 19:01:40,432 basehttp 12576 13244 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-05 19:01:40,611 basehttp 12576 13244 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-05 19:01:40,950 basehttp 12576 13244 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-08-05 19:02:01,063 basehttp 12576 9844 "GET /student/dashboard/ HTTP/1.1" 200 36089
+INFO 2025-08-05 19:02:08,936 basehttp 12576 9844 "GET /student/dashboard/ HTTP/1.1" 200 36089
+INFO 2025-08-05 19:02:11,078 basehttp 12576 9844 "GET /courses/ HTTP/1.1" 200 63512
+INFO 2025-08-05 19:02:18,605 basehttp 12576 9844 "POST /courses/10/enroll/ HTTP/1.1" 200 14061
+INFO 2025-08-05 19:02:18,681 basehttp 12576 9844 "GET /static/debug_toolbar/js/redirect.js HTTP/1.1" 304 0
+INFO 2025-08-05 19:31:53,783 autoreload 10880 9356 Watching for file changes with StatReloader
+INFO 2025-08-05 19:32:05,021 basehttp 10880 10416 "GET / HTTP/1.1" 200 31597
+INFO 2025-08-05 19:32:05,089 basehttp 10880 10416 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-05 19:32:05,091 basehttp 10880 12480 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-05 19:32:05,219 basehttp 10880 12480 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-05 19:32:05,548 basehttp 10880 12480 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-08-05 19:32:11,135 basehttp 10880 12480 "GET /logout/ HTTP/1.1" 200 14036
+INFO 2025-08-05 19:32:11,249 basehttp 10880 12480 "GET /static/debug_toolbar/js/redirect.js HTTP/1.1" 304 0
+INFO 2025-08-05 19:32:17,935 basehttp 10880 12480 "GET /login/ HTTP/1.1" 200 27572
+INFO 2025-08-05 19:33:13,578 basehttp 10880 12480 "POST /login/ HTTP/1.1" 200 14043
+INFO 2025-08-05 19:33:16,729 basehttp 10880 12480 "GET /dashboard/ HTTP/1.1" 200 14068
+INFO 2025-08-05 19:33:19,015 basehttp 10880 12480 "GET /student/dashboard/ HTTP/1.1" 200 37066
+INFO 2025-08-05 19:33:31,238 basehttp 10880 12480 "GET /courses/ HTTP/1.1" 200 63512
+INFO 2025-08-05 19:33:35,549 basehttp 10880 12480 "POST /courses/6/enroll/ HTTP/1.1" 200 14057
+INFO 2025-08-05 19:38:18,364 autoreload 12076 11488 Watching for file changes with StatReloader
+INFO 2025-08-05 19:38:47,234 basehttp 12076 10080 "GET / HTTP/1.1" 200 31613
+INFO 2025-08-05 19:38:52,246 basehttp 12076 10080 "GET /logout/ HTTP/1.1" 200 14036
+INFO 2025-08-05 19:39:02,869 basehttp 12076 10080 "GET /admin/ HTTP/1.1" 200 14067
+INFO 2025-08-05 19:39:04,802 basehttp 12076 10080 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 17744
+INFO 2025-08-05 19:39:13,821 basehttp 12076 10080 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 14049
+INFO 2025-08-05 19:39:16,373 basehttp 12076 10080 "GET /admin/ HTTP/1.1" 200 33252
+INFO 2025-08-05 19:39:38,100 basehttp 12076 10080 "GET / HTTP/1.1" 200 30609
+INFO 2025-08-05 19:39:38,156 basehttp 12076 10080 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-05 19:39:38,159 basehttp 12076 2360 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-05 19:39:38,291 basehttp 12076 2360 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-05 19:39:38,388 basehttp 12076 2360 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-08-05 19:39:49,165 basehttp 12076 2360 "GET /courses/ HTTP/1.1" 200 63512
+INFO 2025-08-05 19:40:00,560 basehttp 12076 2360 "POST /courses/8/enroll/ HTTP/1.1" 200 14057
+INFO 2025-08-05 19:40:00,618 basehttp 12076 2360 "GET /static/debug_toolbar/js/redirect.js HTTP/1.1" 304 0
+INFO 2025-08-05 19:40:02,212 basehttp 12076 2360 "GET /courses/8/ HTTP/1.1" 200 29805
+INFO 2025-08-05 19:40:06,263 basehttp 12076 2360 "POST /courses/8/enroll/ HTTP/1.1" 200 14057
+INFO 2025-08-05 19:40:08,149 basehttp 12076 2360 "GET /courses/8/ HTTP/1.1" 200 29800
+INFO 2025-08-05 19:40:10,990 basehttp 12076 2360 "POST /courses/8/enroll/ HTTP/1.1" 200 14057
+INFO 2025-08-05 19:40:12,598 basehttp 12076 2360 "GET /courses/8/ HTTP/1.1" 200 29800
+INFO 2025-08-05 19:40:20,543 basehttp 12076 2360 "POST /courses/8/enroll/ HTTP/1.1" 200 14057
+INFO 2025-08-05 19:40:23,120 basehttp 12076 2360 "GET /courses/8/ HTTP/1.1" 200 29800
+WARNING 2025-08-05 23:21:14,460 gemini 2764 6584 Quota/rate limit exceeded, using fallback data: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 45
+}
+]
+WARNING 2025-08-05 23:21:14,753 gemini 2764 6584 Quota/rate limit exceeded, using fallback data: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 45
+}
+]
+WARNING 2025-08-05 23:21:15,041 gemini 2764 6584 Quota/rate limit exceeded, using fallback data: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 44
+}
+]
+WARNING 2025-08-05 23:21:15,372 gemini 2764 6584 Quota/rate limit exceeded, using fallback data: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 44
+}
+]
+INFO 2025-08-05 23:43:33,440 autoreload 13100 10448 Watching for file changes with StatReloader
+INFO 2025-08-05 23:44:56,335 autoreload 11148 4036 Watching for file changes with StatReloader
+INFO 2025-08-06 01:12:21,678 autoreload 6512 8228 Watching for file changes with StatReloader
+INFO 2025-08-06 01:12:38,034 basehttp 6512 13932 "GET / HTTP/1.1" 200 30057
+INFO 2025-08-06 01:12:38,153 basehttp 6512 7524 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14879
+INFO 2025-08-06 01:12:38,154 basehttp 6512 13932 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 29468
+INFO 2025-08-06 01:12:38,600 basehttp 6512 7524 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-08-06 01:12:39,291 basehttp 6512 7524 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4700
+INFO 2025-08-06 01:13:07,567 basehttp 6512 7524 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 01:13:14,983 basehttp 6512 7524 "POST /login/ HTTP/1.1" 200 28489
+INFO 2025-08-06 01:13:18,262 basehttp 6512 7524 "GET /register/ HTTP/1.1" 200 26909
+INFO 2025-08-06 01:14:33,850 basehttp 6512 7524 "POST /register/ HTTP/1.1" 200 26908
+INFO 2025-08-06 01:14:41,340 basehttp 6512 7524 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 01:14:45,648 basehttp 6512 7524 "POST /login/ HTTP/1.1" 200 28492
+INFO 2025-08-06 01:15:07,734 basehttp 6512 1348 "GET /login/ HTTP/1.1" 200 27836
+INFO 2025-08-06 01:15:07,810 basehttp 6512 1348 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-06 01:15:07,811 basehttp 6512 13888 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-06 01:15:08,031 basehttp 6512 13888 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-06 01:15:08,469 basehttp 6512 13888 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2025-08-06 01:15:09,890 log 6512 13888 The request's session was deleted before the request completed. The user may have logged out in a concurrent request, for example.: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: attempt to write a readonly database
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\sessions\backends\db.py", line 127, in save
+    obj.save(
+    ~~~~~~~~^
+        force_insert=must_create, force_update=not must_create, using=using
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 1138, in _save_table
+    updated = self._do_update(
+        base_qs, using, pk_val, values, update_fields, forced_update
+    )
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 1203, in _do_update
+    return filtered._update(values) > 0
+           ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 1283, in _update
+    return query.get_compiler(self.db).execute_sql(ROW_COUNT)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 2059, in execute_sql
+    row_count = super().execute_sql(result_type)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1622, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: attempt to write a readonly database
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\sessions\middleware.py", line 59, in process_response
+    request.session.save()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\sessions\backends\db.py", line 136, in save
+    raise UpdateError
+django.contrib.sessions.backends.base.UpdateError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\sessions\middleware.py", line 61, in process_response
+    raise SessionInterrupted(
+    ...<3 lines>...
+    )
+django.contrib.sessions.exceptions.SessionInterrupted: The request's session was deleted before the request completed. The user may have logged out in a concurrent request, for example.
+WARNING 2025-08-06 01:15:09,954 basehttp 6512 13888 "GET /favicon.ico HTTP/1.1" 400 173938
+ERROR 2025-08-06 01:15:14,786 log 6512 1348 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 121, in login_view
+    user = authenticate(username=username, password=password)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\__init__.py", line 114, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\helpers.py", line 617, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2025-08-06 01:15:14,864 basehttp 6512 1348 "POST /login/ HTTP/1.1" 500 106620
+WARNING 2025-08-06 01:15:15,380 log 6512 1348 Not Found: /favicon.ico
+WARNING 2025-08-06 01:15:15,383 basehttp 6512 1348 "GET /favicon.ico HTTP/1.1" 404 28747
+ERROR 2025-08-06 01:15:28,163 log 6512 1348 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 121, in login_view
+    user = authenticate(username=username, password=password)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\__init__.py", line 114, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\helpers.py", line 617, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2025-08-06 01:15:28,252 basehttp 6512 1348 "POST /login/ HTTP/1.1" 500 106620
+INFO 2025-08-06 01:15:39,694 basehttp 6512 1348 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 01:15:39,734 basehttp 6512 1348 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 01:15:42,900 basehttp 6512 1348 "GET /login/ HTTP/1.1" 200 27168
+ERROR 2025-08-06 01:15:50,400 log 6512 1348 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 121, in login_view
+    user = authenticate(username=username, password=password)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\__init__.py", line 114, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\helpers.py", line 617, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2025-08-06 01:15:50,495 basehttp 6512 1348 "POST /login/ HTTP/1.1" 500 106478
+INFO 2025-08-06 01:16:11,196 basehttp 6512 1348 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-08-06 01:16:11,303 basehttp 6512 1348 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 17340
+INFO 2025-08-06 01:16:18,149 basehttp 6512 1348 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-08-06 01:16:18,456 basehttp 6512 1348 "GET /admin/ HTTP/1.1" 200 32850
+INFO 2025-08-06 01:16:47,004 basehttp 6512 1348 "GET /admin/core/user/ HTTP/1.1" 200 41330
+INFO 2025-08-06 01:16:47,141 basehttp 6512 4992 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-08-06 01:16:47,526 basehttp 6512 1348 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 01:17:04,270 basehttp 6512 1348 "GET /admin/ HTTP/1.1" 200 32849
+INFO 2025-08-06 01:17:06,387 basehttp 6512 1348 "GET /admin/core/userprofile/ HTTP/1.1" 200 34660
+INFO 2025-08-06 01:17:06,619 basehttp 6512 1348 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 01:17:11,336 basehttp 6512 1348 "GET /admin/core/userprofile/5/change/ HTTP/1.1" 200 34278
+INFO 2025-08-06 01:17:11,557 basehttp 6512 1348 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 01:17:14,864 basehttp 6512 1348 "GET / HTTP/1.1" 200 30205
+INFO 2025-08-06 01:17:17,672 basehttp 6512 1348 "GET /student/dashboard/ HTTP/1.1" 200 35686
+INFO 2025-08-06 01:17:27,063 basehttp 6512 1348 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 01:17:27,097 basehttp 6512 1348 "GET /login/ HTTP/1.1" 200 27168
+ERROR 2025-08-06 01:17:35,907 log 6512 1348 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 121, in login_view
+    user = authenticate(username=username, password=password)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\__init__.py", line 114, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\helpers.py", line 617, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2025-08-06 01:17:35,988 basehttp 6512 1348 "POST /login/ HTTP/1.1" 500 106448
+INFO 2025-08-06 01:17:59,825 autoreload 11444 13908 Watching for file changes with StatReloader
+INFO 2025-08-06 01:22:21,579 autoreload 11396 2856 Watching for file changes with StatReloader
+WARNING 2025-08-06 01:34:20,245 gemini 12896 7488 Quota/rate limit exceeded, using fallback data: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 39
+}
+]
+WARNING 2025-08-06 01:34:20,719 gemini 12896 7488 Quota/rate limit exceeded, using fallback data: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 39
+}
+]
+WARNING 2025-08-06 01:34:21,157 gemini 12896 7488 Quota/rate limit exceeded, using fallback data: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 38
+}
+]
+WARNING 2025-08-06 01:34:21,602 gemini 12896 7488 Quota/rate limit exceeded, using fallback data: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 38
+}
+]
+INFO 2025-08-06 09:53:40,288 autoreload 6988 9556 Watching for file changes with StatReloader
+INFO 2025-08-06 09:54:06,184 basehttp 6988 10164 "GET / HTTP/1.1" 200 30057
+INFO 2025-08-06 09:54:06,433 basehttp 6988 10164 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-06 09:54:06,461 basehttp 6988 12580 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-06 09:54:06,707 basehttp 6988 12580 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-06 09:54:07,185 basehttp 6988 12580 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2025-08-06 09:54:07,923 log 6988 12580 Not Found: /favicon.ico
+WARNING 2025-08-06 09:54:07,924 basehttp 6988 12580 "GET /favicon.ico HTTP/1.1" 404 28748
+INFO 2025-08-06 09:54:11,822 basehttp 6988 12580 "GET /login/ HTTP/1.1" 200 27168
+ERROR 2025-08-06 09:54:21,404 log 6988 12580 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 121, in login_view
+    user = authenticate(username=username, password=password)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\__init__.py", line 114, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\helpers.py", line 617, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2025-08-06 09:54:21,568 basehttp 6988 12580 "POST /login/ HTTP/1.1" 500 106509
+ERROR 2025-08-06 09:54:33,629 log 6988 12580 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 121, in login_view
+    user = authenticate(username=username, password=password)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\__init__.py", line 114, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\helpers.py", line 617, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2025-08-06 09:54:33,717 basehttp 6988 12580 "POST /login/ HTTP/1.1" 500 106553
+INFO 2025-08-06 12:27:52,838 autoreload 7988 12912 Watching for file changes with StatReloader
+INFO 2025-08-06 12:28:06,917 basehttp 7988 12516 "GET / HTTP/1.1" 200 30057
+INFO 2025-08-06 12:28:07,154 basehttp 7988 12516 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:28:07,169 basehttp 7988 12516 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:28:07,416 basehttp 7988 12516 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:28:07,913 basehttp 7988 12516 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2025-08-06 12:28:08,481 log 7988 12516 Not Found: /favicon.ico
+WARNING 2025-08-06 12:28:08,482 basehttp 7988 12516 "GET /favicon.ico HTTP/1.1" 404 28748
+INFO 2025-08-06 12:28:11,298 basehttp 7988 12516 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 12:28:17,826 basehttp 7988 12516 "POST /login/ HTTP/1.1" 200 28494
+INFO 2025-08-06 12:28:27,699 basehttp 7988 6744 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 12:28:27,783 basehttp 7988 6744 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:28:27,791 basehttp 7988 6744 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:28:28,059 basehttp 7988 6744 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:28:28,753 basehttp 7988 6744 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+ERROR 2025-08-06 12:29:16,741 log 7988 6744 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 121, in login_view
+    user = authenticate(username=username, password=password)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\__init__.py", line 114, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\helpers.py", line 617, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2025-08-06 12:29:16,848 basehttp 7988 6744 "POST /login/ HTTP/1.1" 500 107285
+ERROR 2025-08-06 12:29:29,655 log 7988 6744 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 121, in login_view
+    user = authenticate(username=username, password=password)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\__init__.py", line 114, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\helpers.py", line 617, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2025-08-06 12:29:29,788 basehttp 7988 6744 "POST /login/ HTTP/1.1" 500 107284
+INFO 2025-08-06 12:29:38,630 basehttp 7988 6744 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-08-06 12:29:39,075 basehttp 7988 6744 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 17341
+INFO 2025-08-06 12:29:39,124 basehttp 7988 6744 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:29:39,134 basehttp 7988 6744 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:29:39,137 basehttp 7988 10712 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:29:39,140 basehttp 7988 7028 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:29:39,141 basehttp 7988 10196 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:29:39,143 basehttp 7988 14124 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:29:39,171 basehttp 7988 14124 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:29:46,127 basehttp 7988 14124 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-08-06 12:29:47,286 basehttp 7988 14124 "GET /admin/ HTTP/1.1" 200 32850
+INFO 2025-08-06 12:29:47,362 basehttp 7988 14124 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:29:47,422 basehttp 7988 14124 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-08-06 12:29:47,423 basehttp 7988 10196 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:02,244 basehttp 7988 14124 "GET /admin/core/studentprogress/ HTTP/1.1" 200 32906
+INFO 2025-08-06 12:30:02,301 basehttp 7988 14124 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:02,317 basehttp 7988 7028 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:02,318 basehttp 7988 6744 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:02,319 basehttp 7988 10712 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:02,319 basehttp 7988 14124 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:02,332 basehttp 7988 7028 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:02,342 basehttp 7988 10712 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:02,343 basehttp 7988 6744 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:02,343 basehttp 7988 12820 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:02,625 basehttp 7988 12820 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:02,841 basehttp 7988 10196 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 12:30:02,879 basehttp 7988 10196 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:02,901 basehttp 7988 12820 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:06,503 basehttp 7988 12820 "GET /admin/core/calendarevent/ HTTP/1.1" 200 36352
+INFO 2025-08-06 12:30:06,782 basehttp 7988 12820 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 12:30:06,886 basehttp 7988 12820 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-08-06 12:30:16,948 basehttp 7988 12820 "GET /admin/core/assignment/ HTTP/1.1" 200 32811
+INFO 2025-08-06 12:30:17,188 basehttp 7988 12820 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 12:30:21,828 basehttp 7988 12820 "GET /admin/core/enrollment/ HTTP/1.1" 200 45232
+INFO 2025-08-06 12:30:22,025 basehttp 7988 12820 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 12:30:24,470 basehttp 7988 12820 "GET /admin/core/assignmentsubmission/ HTTP/1.1" 200 32397
+INFO 2025-08-06 12:30:24,657 basehttp 7988 12820 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 12:30:31,059 basehttp 7988 12820 "GET /admin/core/grade/ HTTP/1.1" 200 31870
+INFO 2025-08-06 12:30:31,246 basehttp 7988 12820 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 12:30:35,520 basehttp 7988 12820 "GET /admin/core/grade/add/ HTTP/1.1" 200 35095
+INFO 2025-08-06 12:30:35,587 basehttp 7988 12820 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:35,588 basehttp 7988 6744 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:35,613 basehttp 7988 12820 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:35,645 basehttp 7988 6744 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-08-06 12:30:35,753 basehttp 7988 10196 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 12:30:52,349 basehttp 7988 10196 "GET / HTTP/1.1" 200 30206
+INFO 2025-08-06 12:30:55,913 basehttp 7988 10196 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 12:30:55,955 basehttp 7988 10196 "GET /login/ HTTP/1.1" 200 27168
+ERROR 2025-08-06 12:31:01,096 log 7988 10196 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 121, in login_view
+    user = authenticate(username=username, password=password)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\__init__.py", line 114, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\helpers.py", line 617, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2025-08-06 12:31:01,194 basehttp 7988 10196 "POST /login/ HTTP/1.1" 500 107254
+ERROR 2025-08-06 12:41:28,698 log 13948 1364 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 121, in login_view
+    user = authenticate(username=username, password=password)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\__init__.py", line 114, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\helpers.py", line 617, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\axes\backends.py", line 46, in authenticate
+    raise AxesBackendRequestParameterRequired(
+        "AxesBackend requires a request as an argument to authenticate"
+    )
+axes.exceptions.AxesBackendRequestParameterRequired: AxesBackend requires a request as an argument to authenticate
+ERROR 2025-08-06 12:55:00,556 exception 14076 11664 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\http\request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2025-08-06 12:55:00,771 log 14076 11664 Bad Request: /
+ERROR 2025-08-06 12:55:00,773 exception 14076 11664 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\http\request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2025-08-06 12:55:00,808 log 14076 11664 Bad Request: /login/
+ERROR 2025-08-06 12:55:00,809 exception 14076 11664 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\http\request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2025-08-06 12:55:00,855 log 14076 11664 Bad Request: /register/
+ERROR 2025-08-06 12:55:00,960 exception 14076 11664 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\http\request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2025-08-06 12:55:01,065 log 14076 11664 Bad Request: /api/
+ERROR 2025-08-06 12:55:01,067 exception 14076 11664 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\http\request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2025-08-06 12:55:01,101 log 14076 11664 Bad Request: /static/admin/css/base.css
+ERROR 2025-08-06 12:55:54,800 exception 12736 13964 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\http\request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2025-08-06 12:55:54,861 log 12736 13964 Bad Request: /
+ERROR 2025-08-06 12:55:54,863 exception 12736 13964 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\http\request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2025-08-06 12:55:54,901 log 12736 13964 Bad Request: /login/
+ERROR 2025-08-06 12:55:54,903 exception 12736 13964 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\http\request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2025-08-06 12:55:54,939 log 12736 13964 Bad Request: /register/
+ERROR 2025-08-06 12:56:01,813 exception 12736 13964 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\http\request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2025-08-06 12:56:02,090 log 12736 13964 Bad Request: /admin/dashboard/
+ERROR 2025-08-06 12:56:09,223 exception 12736 13964 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\http\request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2025-08-06 12:56:09,280 log 12736 13964 Bad Request: /api/
+ERROR 2025-08-06 12:56:09,284 exception 12736 13964 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\http\request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2025-08-06 12:56:09,329 log 12736 13964 Bad Request: /static/admin/css/base.css
+WARNING 2025-08-06 12:56:46,194 log 11832 5028 Not Found: /admin/dashboard/
+WARNING 2025-08-06 12:56:56,898 log 11832 5028 Unauthorized: /api/
+WARNING 2025-08-06 12:56:56,962 log 11832 5028 Not Found: /static/admin/css/base.css
+ERROR 2025-08-06 12:56:57,120 dispatcher 11832 5028 Error calling storages_changed in Signal.send_robust() (sys.meta_path is None, Python is likely shutting down)
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\dispatch\dispatcher.py", line 306, in send_robust
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\test\signals.py", line 116, in storages_changed
+ImportError: sys.meta_path is None, Python is likely shutting down
+ERROR 2025-08-06 12:56:57,121 dispatcher 11832 5028 Error calling storages_changed in Signal.send_robust() (sys.meta_path is None, Python is likely shutting down)
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\dispatch\dispatcher.py", line 306, in send_robust
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\test\signals.py", line 116, in storages_changed
+ImportError: sys.meta_path is None, Python is likely shutting down
+WARNING 2025-08-06 12:58:07,634 log 8836 4500 Not Found: /admin/dashboard/
+WARNING 2025-08-06 12:58:19,264 log 8836 4500 Unauthorized: /api/
+WARNING 2025-08-06 12:58:19,323 log 8836 4500 Not Found: /static/admin/css/base.css
+ERROR 2025-08-06 12:58:19,487 dispatcher 8836 4500 Error calling storages_changed in Signal.send_robust() (sys.meta_path is None, Python is likely shutting down)
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\dispatch\dispatcher.py", line 306, in send_robust
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\test\signals.py", line 116, in storages_changed
+ImportError: sys.meta_path is None, Python is likely shutting down
+ERROR 2025-08-06 12:58:19,488 dispatcher 8836 4500 Error calling storages_changed in Signal.send_robust() (sys.meta_path is None, Python is likely shutting down)
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\dispatch\dispatcher.py", line 306, in send_robust
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\test\signals.py", line 116, in storages_changed
+ImportError: sys.meta_path is None, Python is likely shutting down
+INFO 2025-08-06 13:00:53,027 autoreload 6604 14168 Watching for file changes with StatReloader
+INFO 2025-08-06 13:01:04,225 basehttp 6604 13884 "GET / HTTP/1.1" 200 30056
+INFO 2025-08-06 13:01:06,640 basehttp 6604 13884 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 13:01:15,002 basehttp 6604 13884 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:01:15,296 basehttp 6604 13884 "GET /dashboard/ HTTP/1.1" 302 0
+ERROR 2025-08-06 13:01:16,089 log 6604 13884 Internal Server Error: /instructor/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'generate_exam' with no arguments not found. 1 pattern(s) tried: ['courses/(?P<course_pk>[0-9]+)/exam/generate/\\Z']
+ERROR 2025-08-06 13:01:16,380 basehttp 6604 13884 "GET /instructor/dashboard/ HTTP/1.1" 500 187637
+WARNING 2025-08-06 13:01:27,673 log 6604 13884 Forbidden (CSRF token from POST incorrect.): /login/
+WARNING 2025-08-06 13:01:27,886 basehttp 6604 13884 "POST /login/ HTTP/1.1" 403 15605
+INFO 2025-08-06 13:01:31,126 basehttp 6604 13884 "GET /login/ HTTP/1.1" 200 28036
+INFO 2025-08-06 13:01:41,689 basehttp 6604 13884 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:01:41,733 basehttp 6604 13884 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 13:01:50,874 basehttp 6604 13884 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:01:51,047 basehttp 6604 13884 "GET /dashboard/ HTTP/1.1" 302 0
+ERROR 2025-08-06 13:01:51,171 log 6604 13884 Internal Server Error: /instructor/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'generate_exam' with no arguments not found. 1 pattern(s) tried: ['courses/(?P<course_pk>[0-9]+)/exam/generate/\\Z']
+ERROR 2025-08-06 13:01:51,317 basehttp 6604 13884 "GET /instructor/dashboard/ HTTP/1.1" 500 187636
+WARNING 2025-08-06 13:01:58,688 log 6604 13884 Forbidden (CSRF token from POST incorrect.): /login/
+WARNING 2025-08-06 13:01:58,898 basehttp 6604 13884 "POST /login/ HTTP/1.1" 403 15604
+INFO 2025-08-06 13:18:31,007 autoreload 11872 13596 Watching for file changes with StatReloader
+INFO 2025-08-06 13:18:38,305 basehttp 11872 12448 "GET / HTTP/1.1" 200 30057
+INFO 2025-08-06 13:18:46,115 basehttp 11872 2196 "GET / HTTP/1.1" 200 30427
+INFO 2025-08-06 13:18:55,744 basehttp 11872 2196 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:18:55,784 basehttp 11872 2196 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 13:19:03,361 basehttp 11872 2196 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:19:03,564 basehttp 11872 2196 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:19:03,833 basehttp 11872 2196 "GET /student/dashboard/ HTTP/1.1" 200 36662
+INFO 2025-08-06 13:19:10,374 basehttp 11872 2196 "GET /courses/ HTTP/1.1" 200 66459
+INFO 2025-08-06 13:19:17,843 basehttp 11872 2196 "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:19:18,124 basehttp 11872 2196 "GET /courses/2/ HTTP/1.1" 200 29403
+INFO 2025-08-06 13:19:22,336 basehttp 11872 2196 "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:19:22,514 basehttp 11872 2196 "GET /courses/2/ HTTP/1.1" 200 29403
+INFO 2025-08-06 13:19:25,267 basehttp 11872 2196 "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:19:25,432 basehttp 11872 2196 "GET /courses/2/ HTTP/1.1" 200 29403
+INFO 2025-08-06 13:19:27,650 basehttp 11872 2196 "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:19:27,817 basehttp 11872 2196 "GET /courses/2/ HTTP/1.1" 200 29403
+INFO 2025-08-06 13:19:30,136 basehttp 11872 2196 "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:19:30,336 basehttp 11872 2196 "GET /courses/2/ HTTP/1.1" 200 29403
+INFO 2025-08-06 13:19:37,071 basehttp 11872 2196 "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:19:37,248 basehttp 11872 2196 "GET /courses/2/ HTTP/1.1" 200 29403
+INFO 2025-08-06 13:19:44,994 basehttp 11872 2196 "GET /student/dashboard/ HTTP/1.1" 200 35685
+INFO 2025-08-06 13:19:51,938 basehttp 11872 2196 "GET /courses/ HTTP/1.1" 200 66459
+INFO 2025-08-06 13:19:53,881 basehttp 11872 2196 "GET /student/dashboard/ HTTP/1.1" 200 35685
+INFO 2025-08-06 13:20:06,617 basehttp 11872 2196 "GET /student/quizzes/ HTTP/1.1" 200 46318
+INFO 2025-08-06 13:20:13,785 basehttp 11872 2196 "GET /student/quiz/6/ HTTP/1.1" 200 32628
+ERROR 2025-08-06 13:23:39,378 log 11736 3200 Internal Server Error: /instructor/exams/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 428, in instructor_exam_submissions
+    return render(request, 'core/instructor_submissions.html', {'exams': exams})
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: core/instructor_submissions.html
+ERROR 2025-08-06 13:25:07,845 dispatcher 2936 8460 Error calling storages_changed in Signal.send_robust() (sys.meta_path is None, Python is likely shutting down)
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\dispatch\dispatcher.py", line 306, in send_robust
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\test\signals.py", line 116, in storages_changed
+ImportError: sys.meta_path is None, Python is likely shutting down
+ERROR 2025-08-06 13:25:07,847 dispatcher 2936 8460 Error calling storages_changed in Signal.send_robust() (sys.meta_path is None, Python is likely shutting down)
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\dispatch\dispatcher.py", line 306, in send_robust
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\test\signals.py", line 116, in storages_changed
+ImportError: sys.meta_path is None, Python is likely shutting down
+INFO 2025-08-06 13:28:08,265 autoreload 13680 11828 Watching for file changes with StatReloader
+INFO 2025-08-06 13:28:20,884 basehttp 13680 5428 "GET / HTTP/1.1" 200 30206
+INFO 2025-08-06 13:28:24,089 basehttp 13680 5428 "GET /student/dashboard/ HTTP/1.1" 200 35685
+INFO 2025-08-06 13:28:26,850 basehttp 13680 5428 "GET /student/quizzes/ HTTP/1.1" 200 46318
+INFO 2025-08-06 13:28:31,332 basehttp 13680 5428 "GET /student/quiz/1/ HTTP/1.1" 200 27706
+INFO 2025-08-06 13:28:47,223 basehttp 13680 5428 - Broken pipe from ('127.0.0.1', 62703)
+INFO 2025-08-06 13:28:47,333 basehttp 13680 8592 - Broken pipe from ('127.0.0.1', 62704)
+INFO 2025-08-06 13:28:47,599 basehttp 13680 11524 "GET /courses/ HTTP/1.1" 200 73195
+INFO 2025-08-06 13:28:49,565 basehttp 13680 11524 "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:28:49,795 basehttp 13680 11524 "GET /courses/2/ HTTP/1.1" 200 34019
+INFO 2025-08-06 13:29:13,085 basehttp 13680 11524 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 13:29:28,618 basehttp 13680 11524 "POST /courses/7/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:29:28,780 basehttp 13680 11524 "GET /courses/7/ HTTP/1.1" 200 30748
+INFO 2025-08-06 13:29:37,929 basehttp 13680 11524 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 13:29:40,017 basehttp 13680 11524 "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:29:40,210 basehttp 13680 11524 "GET /courses/2/ HTTP/1.1" 200 34018
+INFO 2025-08-06 13:49:33,568 autoreload 11476 9692 Watching for file changes with StatReloader
+INFO 2025-08-06 13:51:05,515 basehttp 11476 4460 "GET / HTTP/1.1" 200 30206
+INFO 2025-08-06 13:51:09,551 basehttp 11476 4460 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 13:51:58,358 basehttp 11476 4460 "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:51:58,565 basehttp 11476 4460 "GET /courses/2/ HTTP/1.1" 200 34138
+INFO 2025-08-06 13:52:03,872 basehttp 11476 4460 "GET /material/4/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:52:04,072 basehttp 11476 4460 "GET /courses/2/ HTTP/1.1" 200 34232
+INFO 2025-08-06 13:52:11,173 basehttp 11476 4460 "GET /material/6/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:52:11,362 basehttp 11476 4460 "GET /courses/2/ HTTP/1.1" 200 34232
+INFO 2025-08-06 13:52:17,087 basehttp 11476 4460 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 13:52:42,040 basehttp 11476 4460 "POST /courses/6/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:52:42,275 basehttp 11476 4460 "GET /courses/6/ HTTP/1.1" 200 32620
+ERROR 2025-08-06 13:52:49,055 log 11476 4460 Internal Server Error: /exam/3/submit/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 432, in submit_exam_view
+    return render(request, 'core/exam_submit.html', {'exam': exam})
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: core/exam_submit.html
+ERROR 2025-08-06 13:52:49,155 basehttp 11476 4460 "GET /exam/3/submit/ HTTP/1.1" 500 112630
+ERROR 2025-08-06 13:52:54,376 log 11476 4460 Internal Server Error: /exam/6/submit/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 432, in submit_exam_view
+    return render(request, 'core/exam_submit.html', {'exam': exam})
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: core/exam_submit.html
+ERROR 2025-08-06 13:52:54,478 basehttp 11476 4460 "GET /exam/6/submit/ HTTP/1.1" 500 112612
+INFO 2025-08-06 13:53:07,044 basehttp 11476 4460 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 13:53:15,723 basehttp 11476 4460 "POST /courses/7/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:53:15,915 basehttp 11476 4460 "GET /courses/7/ HTTP/1.1" 200 30743
+INFO 2025-08-06 13:53:25,290 basehttp 11476 4460 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 13:53:43,398 basehttp 11476 4460 "POST /courses/3/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:53:43,578 basehttp 11476 4460 "GET /courses/3/ HTTP/1.1" 200 31435
+INFO 2025-08-06 13:53:47,467 basehttp 11476 4460 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:53:47,509 basehttp 11476 4460 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 13:58:42,638 basehttp 11476 12400 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 13:58:52,283 basehttp 11476 12400 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:58:52,449 basehttp 11476 12400 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-06 13:58:52,818 basehttp 11476 12400 "GET /student/dashboard/ HTTP/1.1" 200 36660
+INFO 2025-08-06 14:03:00,350 basehttp 11476 12400 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 14:03:11,930 basehttp 11476 12400 "POST /courses/6/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:03:12,158 basehttp 11476 12400 "GET /courses/6/ HTTP/1.1" 200 32620
+ERROR 2025-08-06 14:03:29,396 log 11476 12400 Internal Server Error: /exam/3/submit/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 432, in submit_exam_view
+    return render(request, 'core/exam_submit.html', {'exam': exam})
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: core/exam_submit.html
+ERROR 2025-08-06 14:03:29,488 basehttp 11476 12400 "GET /exam/3/submit/ HTTP/1.1" 500 112628
+ERROR 2025-08-06 14:03:38,720 log 11476 12400 Internal Server Error: /exam/6/submit/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 432, in submit_exam_view
+    return render(request, 'core/exam_submit.html', {'exam': exam})
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: core/exam_submit.html
+ERROR 2025-08-06 14:03:38,893 basehttp 11476 12400 "GET /exam/6/submit/ HTTP/1.1" 500 112610
+INFO 2025-08-06 14:03:53,287 basehttp 11476 12400 "GET /student/dashboard/ HTTP/1.1" 200 35685
+INFO 2025-08-06 14:04:56,557 basehttp 11476 12400 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 14:05:03,463 basehttp 11476 12400 "GET /student/message/13/ HTTP/1.1" 200 30440
+INFO 2025-08-06 14:05:48,730 basehttp 11476 12400 "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:05:48,934 basehttp 11476 12400 "GET /courses/2/ HTTP/1.1" 200 34143
+INFO 2025-08-06 14:05:54,249 basehttp 11476 12400 "GET /material/6/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:05:54,455 basehttp 11476 12400 "GET /courses/2/ HTTP/1.1" 200 34232
+INFO 2025-08-06 14:06:01,039 basehttp 11476 12400 "GET /courses/2/ HTTP/1.1" 200 33152
+INFO 2025-08-06 14:06:06,816 basehttp 11476 12400 "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:06:07,039 basehttp 11476 12400 "GET /courses/2/ HTTP/1.1" 200 34138
+INFO 2025-08-06 14:06:22,639 basehttp 11476 12400 "GET /material/5/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:06:22,817 basehttp 11476 12400 "GET /courses/2/ HTTP/1.1" 200 34232
+INFO 2025-08-06 14:07:05,422 basehttp 11476 12400 "GET /material/6/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:07:05,615 basehttp 11476 12400 "GET /courses/2/ HTTP/1.1" 200 34232
+INFO 2025-08-06 14:08:11,874 basehttp 11476 12400 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:08:11,909 basehttp 11476 12400 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 14:08:30,311 basehttp 11476 12400 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:08:30,492 basehttp 11476 12400 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:08:30,689 basehttp 11476 12400 "GET /student/dashboard/ HTTP/1.1" 200 36660
+INFO 2025-08-06 14:08:41,508 basehttp 11476 12400 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 14:09:42,697 basehttp 11476 12400 "GET /student/message/11/ HTTP/1.1" 200 30438
+INFO 2025-08-06 14:10:50,914 basehttp 11476 12400 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:10:50,961 basehttp 11476 12400 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 14:11:02,780 basehttp 11476 12400 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:11:03,060 basehttp 11476 12400 "GET /dashboard/ HTTP/1.1" 302 0
+ERROR 2025-08-06 14:11:03,210 log 11476 12400 Internal Server Error: /instructor/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'generate_exam' with no arguments not found. 1 pattern(s) tried: ['courses/(?P<course_pk>[0-9]+)/exam/generate/\\Z']
+ERROR 2025-08-06 14:11:03,542 basehttp 11476 12400 "GET /instructor/dashboard/ HTTP/1.1" 500 187636
+INFO 2025-08-06 14:17:45,925 autoreload 7852 12124 Watching for file changes with StatReloader
+INFO 2025-08-06 14:17:58,000 basehttp 7852 13484 "GET / HTTP/1.1" 200 30426
+INFO 2025-08-06 14:17:58,067 basehttp 7852 13484 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-06 14:17:58,071 basehttp 7852 5928 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-06 14:17:58,371 basehttp 7852 5928 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-06 14:17:58,457 basehttp 7852 5928 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-08-06 14:18:03,059 basehttp 7852 5928 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:18:03,117 basehttp 7852 5928 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 14:18:11,825 basehttp 7852 5928 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:18:11,969 basehttp 7852 5928 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:18:12,158 basehttp 7852 5928 "GET /student/dashboard/ HTTP/1.1" 200 36709
+INFO 2025-08-06 14:18:20,080 basehttp 7852 5928 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 14:18:23,064 basehttp 7852 5928 "POST /courses/3/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:18:23,277 basehttp 7852 5928 "GET /courses/3/ HTTP/1.1" 200 31435
+INFO 2025-08-06 14:18:30,199 basehttp 7852 5928 "GET /exam/1/submit/ HTTP/1.1" 200 27668
+INFO 2025-08-06 14:18:38,764 basehttp 7852 5928 "GET /courses/3/ HTTP/1.1" 200 30450
+INFO 2025-08-06 14:18:44,789 basehttp 7852 5928 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 14:18:55,752 basehttp 7852 5928 "POST /courses/1/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:18:55,986 basehttp 7852 5928 "GET /courses/1/ HTTP/1.1" 200 34892
+INFO 2025-08-06 14:19:03,164 basehttp 7852 5928 "GET /material/1/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:19:03,529 basehttp 7852 5928 "GET /courses/1/ HTTP/1.1" 200 34989
+INFO 2025-08-06 14:19:07,702 basehttp 7852 5928 "GET /material/2/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:19:07,898 basehttp 7852 5928 "GET /courses/1/ HTTP/1.1" 200 34989
+INFO 2025-08-06 14:19:12,461 basehttp 7852 5928 "GET /material/3/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:19:12,721 basehttp 7852 5928 "GET /courses/1/ HTTP/1.1" 200 34989
+INFO 2025-08-06 14:19:23,735 basehttp 7852 5928 "GET /student/dashboard/ HTTP/1.1" 200 35732
+INFO 2025-08-06 14:19:27,851 basehttp 7852 5928 "GET /student/dashboard/ HTTP/1.1" 200 35732
+INFO 2025-08-06 14:19:38,569 basehttp 7852 5928 "GET /student/dashboard/ HTTP/1.1" 200 35732
+INFO 2025-08-06 14:19:39,858 basehttp 7852 5928 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 14:20:32,578 autoreload 6080 12276 Watching for file changes with StatReloader
+INFO 2025-08-06 14:20:54,053 basehttp 6080 5604 "GET / HTTP/1.1" 200 30206
+INFO 2025-08-06 14:23:30,161 basehttp 6080 5604 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 14:23:34,111 basehttp 6080 5604 "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:23:34,424 basehttp 6080 5604 "GET /courses/2/ HTTP/1.1" 200 34138
+INFO 2025-08-06 14:23:37,993 basehttp 6080 5604 "GET /material/6/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:23:38,215 basehttp 6080 5604 "GET /courses/2/ HTTP/1.1" 200 34232
+INFO 2025-08-06 14:23:44,083 basehttp 6080 5604 "GET /courses/2/ HTTP/1.1" 200 33152
+INFO 2025-08-06 14:23:49,866 basehttp 6080 5604 "POST /courses/1/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:23:50,107 basehttp 6080 5604 "GET /courses/1/ HTTP/1.1" 200 34892
+INFO 2025-08-06 14:23:55,747 basehttp 6080 5604 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 14:27:28,852 basehttp 6080 9404 "POST /courses/1/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:27:29,165 basehttp 6080 9404 "GET /courses/1/ HTTP/1.1" 200 34892
+INFO 2025-08-06 14:27:31,859 basehttp 6080 9404 "GET /material/2/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:27:32,059 basehttp 6080 9404 "GET /courses/1/ HTTP/1.1" 200 34989
+INFO 2025-08-06 14:27:36,101 basehttp 6080 9404 "GET /courses/1/ HTTP/1.1" 200 33909
+INFO 2025-08-06 14:27:39,805 basehttp 6080 9404 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:27:39,844 basehttp 6080 9404 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 14:27:47,571 basehttp 6080 9404 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:27:47,795 basehttp 6080 9404 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:27:48,036 basehttp 6080 9404 "GET /instructor/dashboard/ HTTP/1.1" 200 42334
+INFO 2025-08-06 14:28:15,608 basehttp 6080 9404 "GET /ai/ HTTP/1.1" 200 35535
+INFO 2025-08-06 14:29:34,870 basehttp 6080 9404 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:29:34,917 basehttp 6080 9404 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 14:29:49,770 basehttp 6080 9404 "GET /register/ HTTP/1.1" 200 26909
+INFO 2025-08-06 14:40:11,561 autoreload 11388 14192 Watching for file changes with StatReloader
+INFO 2025-08-06 14:44:18,913 autoreload 6908 12424 Watching for file changes with StatReloader
+INFO 2025-08-06 14:52:36,961 basehttp 6908 12628 "GET / HTTP/1.1" 200 30057
+INFO 2025-08-06 14:52:40,198 basehttp 6908 12628 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 14:52:52,698 basehttp 6908 12628 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:52:52,907 basehttp 6908 12628 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:52:53,269 basehttp 6908 12628 "GET /student/dashboard/ HTTP/1.1" 200 36708
+INFO 2025-08-06 14:53:10,214 basehttp 6908 12628 "GET /student/dashboard/ HTTP/1.1" 200 35732
+INFO 2025-08-06 14:54:47,795 basehttp 6908 12628 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:54:47,843 basehttp 6908 12628 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 14:54:59,383 basehttp 6908 12628 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:54:59,552 basehttp 6908 12628 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:54:59,826 basehttp 6908 12628 "GET /instructor/dashboard/ HTTP/1.1" 200 42336
+INFO 2025-08-06 14:55:04,496 basehttp 6908 12628 "GET /courses/ HTTP/1.1" 200 73397
+INFO 2025-08-06 14:55:29,805 basehttp 6908 12628 "GET /courses/ HTTP/1.1" 200 73397
+INFO 2025-08-06 14:55:36,376 basehttp 6908 12628 "POST /courses/1/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:55:36,566 basehttp 6908 12628 "GET /courses/1/ HTTP/1.1" 200 28788
+INFO 2025-08-06 14:55:42,675 basehttp 6908 12628 "GET /login/ HTTP/1.1" 200 28036
+INFO 2025-08-06 14:55:56,506 basehttp 6908 12628 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:55:56,693 basehttp 6908 12628 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:55:56,913 basehttp 6908 12628 "GET /instructor/dashboard/ HTTP/1.1" 200 42334
+INFO 2025-08-06 14:56:03,895 basehttp 6908 12628 "GET /courses/2/ HTTP/1.1" 200 33601
+INFO 2025-08-06 14:56:06,486 basehttp 6908 12628 "GET /material/4/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:56:06,677 basehttp 6908 12628 "GET /courses/2/ HTTP/1.1" 200 34680
+INFO 2025-08-06 14:56:11,830 basehttp 6908 12628 "GET /course/2/manage/ HTTP/1.1" 200 39973
+INFO 2025-08-06 14:56:44,967 basehttp 6908 12628 "POST /course/2/manage/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:56:45,176 basehttp 6908 12628 "GET /course/2/manage/ HTTP/1.1" 200 43871
+INFO 2025-08-06 14:56:55,395 basehttp 6908 12628 "GET /ai/ HTTP/1.1" 200 35536
+INFO 2025-08-06 14:56:59,977 basehttp 6908 12628 "GET /ai/quiz-generator/ HTTP/1.1" 200 33357
+INFO 2025-08-06 14:57:21,170 basehttp 6908 8992 "POST /ai/quiz-generator/ HTTP/1.1" 200 46326
+INFO 2025-08-06 14:57:33,333 basehttp 6908 8992 "GET /ai/quiz/create/ HTTP/1.1" 200 33923
+INFO 2025-08-06 14:57:49,286 basehttp 6908 8992 "POST /ai/quiz/create/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:57:49,488 basehttp 6908 8992 "GET /courses/4/ HTTP/1.1" 200 32933
+INFO 2025-08-06 14:57:53,234 basehttp 6908 8992 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:57:53,282 basehttp 6908 8992 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 14:58:04,519 basehttp 6908 8992 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:58:04,646 basehttp 6908 8992 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:58:04,855 basehttp 6908 8992 "GET /student/dashboard/ HTTP/1.1" 200 36709
+INFO 2025-08-06 14:58:09,970 basehttp 6908 8992 "GET /courses/ HTTP/1.1" 200 73194
+INFO 2025-08-06 14:58:15,053 basehttp 6908 8992 "POST /courses/4/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 14:58:15,293 basehttp 6908 8992 "GET /courses/4/ HTTP/1.1" 200 32455
+INFO 2025-08-06 14:58:29,919 basehttp 6908 8992 "GET /exam/9/submit/ HTTP/1.1" 200 51557
+ERROR 2025-08-06 14:59:08,067 log 6908 8992 Internal Server Error: /exam/9/submit/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: core_examsubmission.answers
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 429, in submit_exam_view
+    ExamSubmission.objects.create(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        exam=exam,
+        ^^^^^^^^^^
+        student=request.user,
+        ^^^^^^^^^^^^^^^^^^^^^
+        answers=answers
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 1854, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1881, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\debug_toolbar\panels\sql\tracking.py", line 234, in execute
+    return self._record(super().execute, sql, params)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: core_examsubmission.answers
+ERROR 2025-08-06 14:59:08,282 basehttp 6908 8992 "POST /exam/9/submit/ HTTP/1.1" 500 201999
+INFO 2025-08-06 15:28:29,613 autoreload 11556 12124 Watching for file changes with StatReloader
+INFO 2025-08-06 15:29:59,805 basehttp 11556 12900 "GET / HTTP/1.1" 200 30207
+INFO 2025-08-06 15:30:04,019 basehttp 11556 12900 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 15:30:04,081 basehttp 11556 12900 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 15:30:09,219 basehttp 11556 12900 "GET /register/ HTTP/1.1" 200 26909
+INFO 2025-08-06 15:31:44,669 basehttp 11556 12900 "POST /register/ HTTP/1.1" 200 26909
+INFO 2025-08-06 15:32:08,764 basehttp 11556 12900 "GET /register/ HTTP/1.1" 200 26909
+INFO 2025-08-06 15:32:15,245 basehttp 11556 12900 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 15:32:25,715 basehttp 11556 12900 "POST /login/ HTTP/1.1" 200 28493
+INFO 2025-08-06 15:32:44,981 basehttp 11556 12900 "GET /register/ HTTP/1.1" 200 26909
+INFO 2025-08-06 15:33:56,542 basehttp 11556 12900 "POST /register/ HTTP/1.1" 200 26907
+INFO 2025-08-06 15:35:06,631 basehttp 11556 12900 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 15:35:17,228 basehttp 11556 12900 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 15:35:17,397 basehttp 11556 12900 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-06 15:35:17,620 basehttp 11556 12900 "GET /student/dashboard/ HTTP/1.1" 200 36705
+INFO 2025-08-06 15:35:29,385 basehttp 11556 12900 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 15:35:29,429 basehttp 11556 12900 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 15:35:32,818 basehttp 11556 12900 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 15:35:37,370 basehttp 11556 12900 "GET /register/ HTTP/1.1" 200 26909
+INFO 2025-08-06 15:37:51,170 basehttp 11556 12900 "POST /register/ HTTP/1.1" 200 26907
+INFO 2025-08-06 15:38:07,916 basehttp 11556 12900 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 15:38:15,554 basehttp 11556 12900 "POST /login/ HTTP/1.1" 200 28488
+INFO 2025-08-06 15:38:45,508 basehttp 11556 12900 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 15:38:47,245 basehttp 11556 12900 "GET /register/ HTTP/1.1" 200 26909
+INFO 2025-08-06 15:39:17,450 basehttp 11556 12900 "POST /register/ HTTP/1.1" 200 26907
+INFO 2025-08-06 15:39:22,399 basehttp 11556 12900 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 15:39:27,229 basehttp 11556 12900 "POST /login/ HTTP/1.1" 200 28491
+INFO 2025-08-06 15:39:44,981 basehttp 11556 12900 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 15:39:46,927 basehttp 11556 12900 "GET /register/ HTTP/1.1" 200 26909
+INFO 2025-08-06 15:40:15,930 basehttp 11556 12900 "POST /register/ HTTP/1.1" 200 26907
+INFO 2025-08-06 15:40:19,038 basehttp 11556 12900 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 15:40:24,312 basehttp 11556 12900 "POST /login/ HTTP/1.1" 200 28493
+INFO 2025-08-06 15:40:48,219 basehttp 11556 12900 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 15:40:50,409 basehttp 11556 12900 "GET /register/ HTTP/1.1" 200 26909
+ERROR 2025-08-06 15:41:10,042 log 11556 12900 Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table core_userprofile has no column named date_of_birth
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 103, in register_view
+    profile.save()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 1854, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1881, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\debug_toolbar\panels\sql\tracking.py", line 234, in execute
+    return self._record(super().execute, sql, params)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table core_userprofile has no column named date_of_birth
+ERROR 2025-08-06 15:41:10,203 basehttp 11556 12900 "POST /register/ HTTP/1.1" 500 198685
+INFO 2025-08-06 15:41:41,963 basehttp 11556 12900 "POST /register/ HTTP/1.1" 200 26905
+INFO 2025-08-06 15:41:46,856 basehttp 11556 12900 "GET /login/ HTTP/1.1" 200 27168
+WARNING 2025-08-06 15:41:52,258 log 11556 12900 Too Many Requests: /login/
+WARNING 2025-08-06 15:41:52,259 basehttp 11556 12900 "POST /login/ HTTP/1.1" 429 64
+INFO 2025-08-06 15:51:24,843 autoreload 11008 780 Watching for file changes with StatReloader
+INFO 2025-08-06 15:51:37,351 basehttp 11008 2912 "GET / HTTP/1.1" 200 30056
+INFO 2025-08-06 15:51:39,595 basehttp 11008 2912 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 15:51:50,493 basehttp 11008 2912 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 15:51:50,693 basehttp 11008 2912 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-06 15:51:50,914 basehttp 11008 2912 "GET /instructor/dashboard/ HTTP/1.1" 200 42334
+INFO 2025-08-06 15:51:59,128 basehttp 11008 2912 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 15:51:59,184 basehttp 11008 2912 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 16:20:50,923 autoreload 14300 9380 Watching for file changes with StatReloader
+INFO 2025-08-06 16:21:06,639 basehttp 14300 3672 "GET / HTTP/1.1" 200 30056
+INFO 2025-08-06 16:21:06,706 basehttp 14300 3672 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-06 16:21:06,711 basehttp 14300 13476 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-06 16:21:07,068 basehttp 14300 13476 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-06 16:21:07,223 basehttp 14300 13476 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-08-06 16:21:08,665 basehttp 14300 13476 "GET /login/ HTTP/1.1" 200 27168
+INFO 2025-08-06 16:21:19,101 basehttp 14300 13476 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 16:21:19,310 basehttp 14300 13476 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-06 16:21:19,562 basehttp 14300 13476 "GET /student/dashboard/ HTTP/1.1" 200 36707
+INFO 2025-08-06 16:21:30,562 basehttp 14300 13476 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-08-06 16:21:30,997 basehttp 14300 13476 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 16857
+INFO 2025-08-06 16:21:40,410 basehttp 14300 13476 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-08-06 16:21:40,843 basehttp 14300 13476 "GET /admin/ HTTP/1.1" 200 32849
+INFO 2025-08-06 16:22:19,126 basehttp 14300 13476 "GET /admin/core/user/ HTTP/1.1" 200 45736
+INFO 2025-08-06 16:22:19,300 basehttp 14300 3672 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-08-06 16:22:19,556 basehttp 14300 13476 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 16:22:36,698 basehttp 14300 13476 "GET /admin/core/user/add/ HTTP/1.1" 200 50403
+INFO 2025-08-06 16:22:36,835 basehttp 14300 3672 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-08-06 16:22:36,863 basehttp 14300 13476 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-08-06 16:22:37,000 basehttp 14300 2824 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 16:22:37,233 basehttp 14300 13476 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-08-06 16:22:37,237 basehttp 14300 2824 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-08-06 16:23:01,587 basehttp 14300 2824 "GET /admin/auth/group/add/?_to_field=id&_popup=1 HTTP/1.1" 200 27749
+INFO 2025-08-06 16:23:01,681 basehttp 14300 2824 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-08-06 16:23:01,697 basehttp 14300 3672 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15709
+INFO 2025-08-06 16:23:01,819 basehttp 14300 13476 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 16:23:01,972 basehttp 14300 13476 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-08-06 16:23:38,602 basehttp 14300 13476 "POST /admin/core/user/add/ HTTP/1.1" 200 14065
+INFO 2025-08-06 16:23:38,660 basehttp 14300 13476 "GET /static/debug_toolbar/js/redirect.js HTTP/1.1" 304 0
+INFO 2025-08-06 16:24:11,286 basehttp 14300 13476 "GET /admin/core/user/add/ HTTP/1.1" 200 50585
+INFO 2025-08-06 16:24:19,560 basehttp 14300 13476 "GET /admin/core/user/add/ HTTP/1.1" 200 50388
+INFO 2025-08-06 16:24:27,516 basehttp 14300 13476 "POST /admin/core/user/add/ HTTP/1.1" 200 50761
+INFO 2025-08-06 16:24:27,795 basehttp 14300 13476 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 16:24:57,485 basehttp 14300 13476 "POST /admin/core/user/add/ HTTP/1.1" 302 0
+INFO 2025-08-06 16:24:57,952 basehttp 14300 13476 "GET /admin/core/user/ HTTP/1.1" 200 46966
+INFO 2025-08-06 16:24:58,298 basehttp 14300 13476 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 16:25:06,783 basehttp 14300 13476 "GET /admin/core/user/24/change/ HTTP/1.1" 200 50755
+INFO 2025-08-06 16:25:06,997 basehttp 14300 13476 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 16:25:20,297 basehttp 14300 13476 "GET / HTTP/1.1" 200 30594
+INFO 2025-08-06 16:25:22,841 basehttp 14300 13476 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 16:25:22,907 basehttp 14300 13476 "GET /login/ HTTP/1.1" 200 27556
+WARNING 2025-08-06 16:25:37,213 log 14300 13476 Too Many Requests: /login/
+WARNING 2025-08-06 16:25:37,216 basehttp 14300 13476 "POST /login/ HTTP/1.1" 429 64
+WARNING 2025-08-06 16:25:48,927 log 14300 13476 Too Many Requests: /login/
+WARNING 2025-08-06 16:25:48,928 basehttp 14300 13476 "POST /login/ HTTP/1.1" 429 64
+INFO 2025-08-06 16:25:57,121 basehttp 14300 13476 "GET /admin/core/user/24/change/ HTTP/1.1" 302 0
+INFO 2025-08-06 16:25:57,200 basehttp 14300 13476 "GET /admin/login/?next=/admin/core/user/24/change/ HTTP/1.1" 200 17788
+INFO 2025-08-06 16:26:04,498 basehttp 14300 13476 "POST /admin/login/?next=/admin/core/user/24/change/ HTTP/1.1" 302 0
+INFO 2025-08-06 16:26:05,910 basehttp 14300 13476 "GET /admin/core/user/24/change/ HTTP/1.1" 200 50755
+INFO 2025-08-06 16:26:06,166 basehttp 14300 13476 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 16:26:27,046 basehttp 14300 13476 "GET /admin/core/question/add/ HTTP/1.1" 200 35692
+INFO 2025-08-06 16:26:27,276 basehttp 14300 13476 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 16:26:36,654 basehttp 14300 13476 "GET /admin/core/coursematerial/add/ HTTP/1.1" 200 37837
+INFO 2025-08-06 16:26:36,909 basehttp 14300 13476 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 16:27:33,483 basehttp 14300 12300 "POST /admin/core/coursematerial/add/ HTTP/1.1" 302 0
+INFO 2025-08-06 16:27:33,949 basehttp 14300 12300 "GET /admin/core/coursematerial/ HTTP/1.1" 200 39787
+INFO 2025-08-06 16:27:34,157 basehttp 14300 12300 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 16:27:39,922 basehttp 14300 12300 "GET /admin/core/announcement/add/ HTTP/1.1" 200 37731
+INFO 2025-08-06 16:27:40,174 basehttp 14300 12300 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 16:27:42,693 basehttp 14300 12300 "GET /admin/core/coursematerial/ HTTP/1.1" 200 39558
+INFO 2025-08-06 16:27:45,333 basehttp 14300 12300 "GET /admin/core/calendarevent/add/ HTTP/1.1" 200 39652
+INFO 2025-08-06 16:27:45,567 basehttp 14300 12300 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 16:27:59,168 basehttp 14300 12300 "GET / HTTP/1.1" 200 30593
+INFO 2025-08-06 16:28:03,640 basehttp 14300 12300 "GET /student/dashboard/ HTTP/1.1" 200 36120
+INFO 2025-08-06 16:28:11,351 basehttp 14300 12300 "GET /courses/ HTTP/1.1" 200 73582
+INFO 2025-08-06 16:28:13,515 basehttp 14300 12300 "POST /courses/1/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 16:28:13,792 basehttp 14300 12300 "GET /courses/1/ HTTP/1.1" 200 36477
+INFO 2025-08-06 16:28:19,484 basehttp 14300 12300 "GET /material/3/ HTTP/1.1" 302 0
+INFO 2025-08-06 16:28:19,725 basehttp 14300 12300 "GET /courses/1/ HTTP/1.1" 200 36574
+INFO 2025-08-06 16:28:23,100 basehttp 14300 12300 "GET /material/8/ HTTP/1.1" 302 0
+INFO 2025-08-06 16:28:23,289 basehttp 14300 12300 "GET /media/course_materials/PROJECT_GUIDELINES.md HTTP/1.1" 200 3850
+INFO 2025-08-06 16:28:35,724 basehttp 14300 12300 "GET /courses/1/ HTTP/1.1" 200 35494
+INFO 2025-08-06 16:28:40,020 basehttp 14300 12300 "GET /exam/4/submit/ HTTP/1.1" 200 28002
+INFO 2025-08-06 16:28:43,318 basehttp 14300 12300 "GET /courses/1/ HTTP/1.1" 200 35494
+INFO 2025-08-06 16:28:48,010 basehttp 14300 12300 "GET /material/2/ HTTP/1.1" 302 0
+INFO 2025-08-06 16:28:48,254 basehttp 14300 12300 "GET /courses/1/ HTTP/1.1" 200 36574
+INFO 2025-08-06 16:28:51,527 basehttp 14300 12300 "GET /student/dashboard/ HTTP/1.1" 200 36120
+INFO 2025-08-06 16:29:06,620 basehttp 14300 12300 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 16:29:06,815 basehttp 14300 12300 "GET /login/ HTTP/1.1" 200 27557
+ERROR 2025-08-06 17:21:28,387 log 11400 7824 Internal Server Error: /static/admin/img/icon-deletelink.svg
+Traceback (most recent call last):
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\middleware.py", line 137, in __call__
+    response = toolbar.process_request(request)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\__init__.py", line 230, in process_request
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\__init__.py", line 230, in process_request
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\timer.py", line 65, in process_request
+    return super().process_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\__init__.py", line 230, in process_request
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\__init__.py", line 230, in process_request
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\headers.py", line 48, in process_request
+    return super().process_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\__init__.py", line 230, in process_request
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\__init__.py", line 230, in process_request
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\__init__.py", line 230, in process_request
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  [Previous line repeated 5 more times]
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\profiling.py", line 163, in process_request
+    return self.profiler.runcall(super().process_request, request)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\cProfile.py", line 111, in runcall
+    self.enable()
+    ~~~~~~~~~~~^^
+ValueError: Another profiling tool is already active
+INFO 2025-08-06 17:27:33,392 autoreload 14084 6000 Watching for file changes with StatReloader
+WARNING 2025-08-06 17:37:29,167 log 13572 13764 Not Found: /favicon.ico
+WARNING 2025-08-06 17:59:12,581 log 10112 6772 Not Found: /static/admin/img/icon-no.svg
+WARNING 2025-08-06 17:59:13,068 log 10112 8416 Not Found: /static/admin/img/icon-no.svg
+WARNING 2025-08-06 18:00:20,550 log 10112 7872 Not Found: /static/admin/img/calendar-icons.svg
+WARNING 2025-08-06 18:02:43,858 log 10112 4584 Not Found: /static/admin/img/icon-no.svg
+WARNING 2025-08-06 18:03:25,844 log 10112 6772 Not Found: /static/admin/img/calendar-icons.svg
+WARNING 2025-08-06 18:03:33,907 log 10112 4584 Not Found: /static/admin/js/popup_response.js
+WARNING 2025-08-06 18:03:57,265 log 10112 7872 Not Found: /static/admin/img/calendar-icons.svg
+WARNING 2025-08-06 18:04:07,503 log 10112 8416 Not Found: /static/admin/js/popup_response.js
+ERROR 2025-08-06 18:20:10,668 log 10112 6772 Internal Server Error: /static/admin/img/icon-no.svg
+Traceback (most recent call last):
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\middleware.py", line 137, in __call__
+    response = toolbar.process_request(request)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\__init__.py", line 230, in process_request
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\__init__.py", line 230, in process_request
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\timer.py", line 65, in process_request
+    return super().process_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\__init__.py", line 230, in process_request
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\__init__.py", line 230, in process_request
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\headers.py", line 48, in process_request
+    return super().process_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\__init__.py", line 230, in process_request
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\__init__.py", line 230, in process_request
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\__init__.py", line 230, in process_request
+    return self.get_response(request)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  [Previous line repeated 5 more times]
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\profiling.py", line 163, in process_request
+    return self.profiler.runcall(super().process_request, request)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\cProfile.py", line 111, in runcall
+    self.enable()
+    ~~~~~~~~~~~^^
+ValueError: Another profiling tool is already active
+WARNING 2025-08-06 18:20:11,129 log 10112 7872 Not Found: /static/admin/img/icon-no.svg
+WARNING 2025-08-06 18:20:39,279 log 10112 8416 Not Found: /static/admin/img/calendar-icons.svg
+ERROR 2025-08-06 18:22:20,144 log 10112 6772 Internal Server Error: /exam/5/submit/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: core_examsubmission.answers
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 504, in submit_exam_view
+    ExamSubmission.objects.create(exam=exam, student=request.user, answers=answers)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 234, in execute
+    return self._record(super().execute, sql, params)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: core_examsubmission.answers
+INFO 2025-08-06 18:47:05,900 autoreload 3600 4416 Watching for file changes with StatReloader
+INFO 2025-08-06 18:47:16,319 basehttp 3600 12876 "GET / HTTP/1.1" 200 30375
+INFO 2025-08-06 18:47:16,420 basehttp 3600 12876 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 29468
+INFO 2025-08-06 18:47:16,470 basehttp 3600 11008 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 14879
+INFO 2025-08-06 18:47:16,600 basehttp 3600 11008 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-08-06 18:47:17,064 basehttp 3600 11008 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4700
+INFO 2025-08-06 18:47:18,954 basehttp 3600 11008 "GET /login/ HTTP/1.1" 200 27487
+INFO 2025-08-06 18:47:27,880 basehttp 3600 11008 "GET /register/ HTTP/1.1" 200 27226
+INFO 2025-08-06 18:48:10,521 basehttp 3600 11008 "POST /register/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:48:10,569 basehttp 3600 11008 "GET /login/ HTTP/1.1" 200 28464
+INFO 2025-08-06 18:48:21,521 basehttp 3600 11008 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:48:21,761 basehttp 3600 11008 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:48:22,049 basehttp 3600 11008 "GET /student/dashboard/ HTTP/1.1" 200 37023
+INFO 2025-08-06 18:48:29,905 basehttp 3600 11008 "GET /courses/ HTTP/1.1" 200 73510
+INFO 2025-08-06 18:48:32,832 basehttp 3600 11008 "POST /courses/1/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:48:33,103 basehttp 3600 11008 "GET /courses/1/ HTTP/1.1" 200 37222
+INFO 2025-08-06 18:48:43,730 basehttp 3600 11008 "GET /courses/ HTTP/1.1" 200 73510
+INFO 2025-08-06 18:48:45,847 basehttp 3600 11008 "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:48:46,115 basehttp 3600 11008 "GET /courses/2/ HTTP/1.1" 200 35684
+INFO 2025-08-06 18:49:03,814 basehttp 3600 11008 "GET /courses/ HTTP/1.1" 200 73510
+INFO 2025-08-06 18:49:05,630 basehttp 3600 11008 "POST /courses/3/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:49:05,931 basehttp 3600 11008 "GET /courses/3/ HTTP/1.1" 200 31757
+INFO 2025-08-06 18:49:09,130 basehttp 3600 11008 "GET /courses/ HTTP/1.1" 200 73510
+INFO 2025-08-06 18:49:14,522 basehttp 3600 11008 "POST /courses/9/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:49:14,732 basehttp 3600 11008 "GET /courses/9/ HTTP/1.1" 200 30990
+INFO 2025-08-06 18:49:17,604 basehttp 3600 11008 "GET /courses/ HTTP/1.1" 200 73510
+INFO 2025-08-06 18:49:23,408 basehttp 3600 11008 "POST /courses/4/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:49:23,708 basehttp 3600 11008 "GET /courses/4/ HTTP/1.1" 200 33588
+INFO 2025-08-06 18:49:29,107 basehttp 3600 11008 "GET /exam/5/submit/ HTTP/1.1" 200 27064
+ERROR 2025-08-06 18:49:49,700 log 3600 11008 Internal Server Error: /exam/5/submit/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: core_examsubmission.answers
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 504, in submit_exam_view
+    ExamSubmission.objects.create(exam=exam, student=request.user, answers=answers)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 234, in execute
+    return self._record(super().execute, sql, params)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: core_examsubmission.answers
+ERROR 2025-08-06 18:49:49,904 basehttp 3600 11008 "POST /exam/5/submit/ HTTP/1.1" 500 203320
+INFO 2025-08-06 18:50:21,414 basehttp 3600 11008 "GET /student/dashboard/ HTTP/1.1" 200 36048
+INFO 2025-08-06 18:50:26,195 basehttp 3600 11008 "GET /student/quizzes/ HTTP/1.1" 200 40404
+INFO 2025-08-06 18:50:30,367 basehttp 3600 11008 "GET /student/quiz/5/ HTTP/1.1" 200 30481
+INFO 2025-08-06 18:50:35,627 basehttp 3600 11008 "GET /student/quiz/4/ HTTP/1.1" 200 28022
+INFO 2025-08-06 18:50:39,177 basehttp 3600 11008 "GET /student/quiz/1/ HTTP/1.1" 200 28022
+INFO 2025-08-06 18:50:46,977 basehttp 3600 11008 "GET /student/quiz/9/ HTTP/1.1" 200 54991
+INFO 2025-08-06 18:50:54,189 basehttp 3600 11008 "GET /courses/ HTTP/1.1" 200 73510
+INFO 2025-08-06 18:51:00,945 basehttp 3600 11008 "POST /courses/4/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:51:01,176 basehttp 3600 11008 "GET /courses/4/ HTTP/1.1" 200 33582
+INFO 2025-08-06 18:51:06,438 basehttp 3600 11008 "GET /exam/5/submit/ HTTP/1.1" 200 27064
+INFO 2025-08-06 18:51:11,508 basehttp 3600 11008 "GET /exam/9/submit/ HTTP/1.1" 200 38226
+ERROR 2025-08-06 18:51:17,381 log 3600 11008 Internal Server Error: /exam/9/submit/
+Traceback (most recent call last):
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: core_examsubmission.answers
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Ramat\Desktop\lms_project\core\views.py", line 504, in submit_exam_view
+    ExamSubmission.objects.create(exam=exam, student=request.user, answers=answers)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 234, in execute
+    return self._record(super().execute, sql, params)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ramat\Desktop\lms_project\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: core_examsubmission.answers
+ERROR 2025-08-06 18:51:17,583 basehttp 3600 11008 "POST /exam/9/submit/ HTTP/1.1" 500 203051
+INFO 2025-08-06 18:52:01,157 basehttp 3600 11008 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:52:01,418 basehttp 3600 11008 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 17234
+INFO 2025-08-06 18:52:08,318 basehttp 3600 11008 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:52:08,738 basehttp 3600 11008 "GET /admin/ HTTP/1.1" 200 36959
+INFO 2025-08-06 18:52:15,240 basehttp 3600 11008 "GET /admin/core/calendarevent/4/change/ HTTP/1.1" 200 40161
+INFO 2025-08-06 18:52:15,506 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:52:19,045 basehttp 3600 11008 "GET /admin/core/calendarevent/4/delete/ HTTP/1.1" 200 30894
+INFO 2025-08-06 18:52:19,090 basehttp 3600 11008 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-08-06 18:52:20,799 basehttp 3600 11008 "POST /admin/core/calendarevent/4/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:52:21,364 basehttp 3600 11008 "GET /admin/core/calendarevent/ HTTP/1.1" 200 37708
+INFO 2025-08-06 18:52:21,686 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:52:36,798 basehttp 3600 11008 "GET /admin/core/calendarevent/3/change/ HTTP/1.1" 200 40414
+INFO 2025-08-06 18:52:37,010 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:52:39,640 basehttp 3600 11008 "GET /admin/core/calendarevent/3/delete/ HTTP/1.1" 200 30936
+INFO 2025-08-06 18:52:41,978 basehttp 3600 11008 "POST /admin/core/calendarevent/3/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:52:42,364 basehttp 3600 11008 "GET /admin/core/calendarevent/ HTTP/1.1" 200 37201
+INFO 2025-08-06 18:52:42,635 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:52:44,198 basehttp 3600 11008 "GET /admin/core/calendarevent/1/change/ HTTP/1.1" 200 40144
+INFO 2025-08-06 18:52:44,466 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:52:47,727 basehttp 3600 11008 "GET /admin/core/calendarevent/1/delete/ HTTP/1.1" 200 30930
+INFO 2025-08-06 18:52:49,336 basehttp 3600 11008 "POST /admin/core/calendarevent/1/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:52:49,695 basehttp 3600 11008 "GET /admin/core/calendarevent/ HTTP/1.1" 200 36674
+INFO 2025-08-06 18:52:49,957 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:52:51,556 basehttp 3600 11008 "GET /admin/core/calendarevent/2/change/ HTTP/1.1" 200 40159
+INFO 2025-08-06 18:52:51,808 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:52:54,995 basehttp 3600 11008 "GET /admin/core/calendarevent/2/delete/ HTTP/1.1" 200 30939
+INFO 2025-08-06 18:52:56,925 basehttp 3600 11008 "POST /admin/core/calendarevent/2/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:52:57,224 basehttp 3600 11008 "GET /admin/core/calendarevent/ HTTP/1.1" 200 34301
+INFO 2025-08-06 18:52:57,469 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:53:18,139 basehttp 3600 11008 "GET /admin/core/assignment/ HTTP/1.1" 200 35502
+INFO 2025-08-06 18:53:18,450 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:53:21,490 basehttp 3600 11008 "GET /admin/core/assignment/2/change/ HTTP/1.1" 200 35724
+INFO 2025-08-06 18:53:21,856 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:53:23,964 basehttp 3600 11008 "GET /admin/core/assignment/2/delete/ HTTP/1.1" 200 30800
+INFO 2025-08-06 18:53:25,807 basehttp 3600 11008 "POST /admin/core/assignment/2/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:53:26,163 basehttp 3600 11008 "GET /admin/core/assignment/ HTTP/1.1" 200 35294
+INFO 2025-08-06 18:53:26,406 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:53:27,749 basehttp 3600 11008 "GET /admin/core/assignment/1/change/ HTTP/1.1" 200 35727
+INFO 2025-08-06 18:53:28,016 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:53:30,101 basehttp 3600 11008 "GET /admin/core/assignment/1/delete/ HTTP/1.1" 200 30800
+INFO 2025-08-06 18:53:31,696 basehttp 3600 11008 "POST /admin/core/assignment/1/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:53:32,075 basehttp 3600 11008 "GET /admin/core/assignment/ HTTP/1.1" 200 33621
+INFO 2025-08-06 18:53:32,333 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:53:34,095 basehttp 3600 11008 "GET /admin/core/announcement/ HTTP/1.1" 200 37902
+INFO 2025-08-06 18:53:34,168 basehttp 3600 1832 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2025-08-06 18:53:34,350 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:53:36,480 basehttp 3600 11008 "GET /admin/core/announcement/4/change/ HTTP/1.1" 200 38178
+INFO 2025-08-06 18:53:36,711 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:53:38,622 basehttp 3600 11008 "GET /admin/core/announcement/4/delete/ HTTP/1.1" 200 30896
+INFO 2025-08-06 18:53:40,220 basehttp 3600 11008 "POST /admin/core/announcement/4/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:53:40,577 basehttp 3600 11008 "GET /admin/core/announcement/ HTTP/1.1" 200 37542
+INFO 2025-08-06 18:53:40,845 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:53:42,117 basehttp 3600 11008 "GET /admin/core/announcement/3/change/ HTTP/1.1" 200 38412
+INFO 2025-08-06 18:53:42,383 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:53:44,724 basehttp 3600 11008 "GET /admin/core/announcement/3/delete/ HTTP/1.1" 200 30947
+INFO 2025-08-06 18:53:46,552 basehttp 3600 11008 "POST /admin/core/announcement/3/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:53:46,910 basehttp 3600 11008 "GET /admin/core/announcement/ HTTP/1.1" 200 36970
+INFO 2025-08-06 18:53:47,143 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:53:49,972 basehttp 3600 11008 "GET /admin/core/announcement/2/change/ HTTP/1.1" 200 38209
+INFO 2025-08-06 18:53:50,175 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:53:53,426 basehttp 3600 11008 "GET /admin/core/announcement/2/delete/ HTTP/1.1" 200 30917
+INFO 2025-08-06 18:53:55,462 basehttp 3600 11008 "POST /admin/core/announcement/2/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:53:55,842 basehttp 3600 11008 "GET /admin/core/announcement/ HTTP/1.1" 200 36391
+INFO 2025-08-06 18:53:56,175 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:53:59,048 basehttp 3600 11008 "GET /admin/core/announcement/1/change/ HTTP/1.1" 200 38200
+INFO 2025-08-06 18:53:59,316 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:54:01,877 basehttp 3600 11008 "GET /admin/core/announcement/1/delete/ HTTP/1.1" 200 30908
+INFO 2025-08-06 18:54:03,706 basehttp 3600 11008 "POST /admin/core/announcement/1/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:54:04,085 basehttp 3600 11008 "GET /admin/core/announcement/ HTTP/1.1" 200 33983
+INFO 2025-08-06 18:54:04,354 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:54:06,393 basehttp 3600 11008 "GET /admin/core/assignmentsubmission/ HTTP/1.1" 200 32825
+INFO 2025-08-06 18:54:06,660 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:54:08,642 basehttp 3600 11008 "GET /admin/core/calendarevent/ HTTP/1.1" 200 34100
+INFO 2025-08-06 18:54:08,858 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:54:11,109 basehttp 3600 11008 "GET /admin/core/choice/ HTTP/1.1" 200 64631
+INFO 2025-08-06 18:54:11,376 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:54:42,431 basehttp 3600 11008 "GET /admin/core/choice/?o=-1.4 HTTP/1.1" 200 66442
+INFO 2025-08-06 18:54:42,775 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:54:45,859 basehttp 3600 11008 "GET /admin/core/choice/?o=1.4 HTTP/1.1" 200 66365
+INFO 2025-08-06 18:54:46,061 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:54:52,017 basehttp 3600 11008 "GET /admin/core/choice/15/change/?_changelist_filters=o%3D1.4 HTTP/1.1" 200 37734
+INFO 2025-08-06 18:54:52,237 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:55:09,235 basehttp 3600 11008 "POST /admin/core/choice/15/change/?_changelist_filters=o%3D1.4 HTTP/1.1" 302 0
+INFO 2025-08-06 18:55:09,947 basehttp 3600 11008 "GET /admin/core/choice/?o=1.4 HTTP/1.1" 200 66625
+INFO 2025-08-06 18:55:10,191 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:55:15,359 basehttp 3600 11008 "GET / HTTP/1.1" 200 30523
+INFO 2025-08-06 18:55:18,557 basehttp 3600 11008 "GET /courses/ HTTP/1.1" 200 73510
+INFO 2025-08-06 18:55:20,200 basehttp 3600 11008 "GET /student/dashboard/ HTTP/1.1" 200 36048
+INFO 2025-08-06 18:55:24,622 basehttp 3600 11008 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:55:24,678 basehttp 3600 11008 "GET /login/ HTTP/1.1" 200 27486
+INFO 2025-08-06 18:55:30,202 basehttp 3600 11008 "GET /admin/core/choice/?o=1.4 HTTP/1.1" 302 0
+INFO 2025-08-06 18:55:30,291 basehttp 3600 11008 "GET /admin/login/?next=/admin/core/choice/%3Fo%3D1.4 HTTP/1.1" 200 17781
+INFO 2025-08-06 18:55:38,320 basehttp 3600 11008 "POST /admin/login/?next=/admin/core/choice/%3Fo%3D1.4 HTTP/1.1" 302 0
+INFO 2025-08-06 18:55:38,971 basehttp 3600 11008 "GET /admin/core/choice/?o=1.4 HTTP/1.1" 200 66365
+INFO 2025-08-06 18:55:39,265 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:55:50,135 basehttp 3600 11008 "GET /admin/core/choice/add/ HTTP/1.1" 200 37177
+INFO 2025-08-06 18:55:50,423 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:55:55,848 basehttp 3600 11008 "GET /admin/core/choice/add/ HTTP/1.1" 200 37177
+INFO 2025-08-06 18:55:56,079 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:56:05,292 basehttp 3600 11008 "GET /admin/core/calendarevent/ HTTP/1.1" 200 34100
+INFO 2025-08-06 18:56:05,524 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:56:09,429 basehttp 3600 11008 "GET /admin/core/coursecategory/ HTTP/1.1" 200 34722
+INFO 2025-08-06 18:56:09,662 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:56:15,343 basehttp 3600 11008 "GET /admin/core/coursecategory/4/change/ HTTP/1.1" 200 35700
+INFO 2025-08-06 18:56:15,643 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:56:18,514 basehttp 3600 11008 "GET /admin/core/coursecategory/4/delete/ HTTP/1.1" 200 30842
+INFO 2025-08-06 18:56:20,367 basehttp 3600 11008 "POST /admin/core/coursecategory/4/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:56:20,691 basehttp 3600 11008 "GET /admin/core/coursecategory/ HTTP/1.1" 200 34505
+INFO 2025-08-06 18:56:20,978 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:56:22,732 basehttp 3600 11008 "GET /admin/core/coursecategory/2/change/ HTTP/1.1" 200 35677
+INFO 2025-08-06 18:56:22,955 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:56:26,050 basehttp 3600 11008 "GET /admin/core/coursecategory/2/delete/ HTTP/1.1" 200 30851
+INFO 2025-08-06 18:56:27,780 basehttp 3600 11008 "POST /admin/core/coursecategory/2/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:56:28,125 basehttp 3600 11008 "GET /admin/core/coursecategory/ HTTP/1.1" 200 34116
+INFO 2025-08-06 18:56:28,351 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:56:31,398 basehttp 3600 11008 "GET /admin/core/coursecategory/1/change/ HTTP/1.1" 200 35629
+INFO 2025-08-06 18:56:31,609 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:56:34,661 basehttp 3600 11008 "GET /admin/core/coursecategory/1/delete/ HTTP/1.1" 200 30851
+INFO 2025-08-06 18:56:36,691 basehttp 3600 11008 "POST /admin/core/coursecategory/1/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:56:37,002 basehttp 3600 11008 "GET /admin/core/coursecategory/ HTTP/1.1" 200 33724
+INFO 2025-08-06 18:56:37,246 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:56:40,164 basehttp 3600 11008 "GET /admin/core/coursecategory/3/change/ HTTP/1.1" 200 35568
+INFO 2025-08-06 18:56:40,486 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:56:43,746 basehttp 3600 11008 "GET /admin/core/coursecategory/3/delete/ HTTP/1.1" 200 30839
+INFO 2025-08-06 18:56:45,576 basehttp 3600 11008 "POST /admin/core/coursecategory/3/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:56:45,934 basehttp 3600 11008 "GET /admin/core/coursecategory/ HTTP/1.1" 200 33338
+INFO 2025-08-06 18:56:46,150 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:56:48,062 basehttp 3600 11008 "GET /admin/core/coursecategory/5/change/ HTTP/1.1" 200 35543
+INFO 2025-08-06 18:56:48,320 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:56:51,415 basehttp 3600 11008 "GET /admin/core/coursecategory/5/delete/ HTTP/1.1" 200 30857
+INFO 2025-08-06 18:56:53,088 basehttp 3600 11008 "POST /admin/core/coursecategory/5/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:56:53,401 basehttp 3600 11008 "GET /admin/core/coursecategory/ HTTP/1.1" 200 31389
+INFO 2025-08-06 18:56:53,689 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:56:58,474 basehttp 3600 11008 "GET /admin/core/coursematerial/ HTTP/1.1" 200 39598
+INFO 2025-08-06 18:56:58,837 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:57:01,767 basehttp 3600 11008 "GET /admin/core/coursematerial/1/change/ HTTP/1.1" 200 38174
+INFO 2025-08-06 18:57:02,012 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:57:06,494 basehttp 3600 11008 "GET /admin/core/coursematerial/1/delete/ HTTP/1.1" 200 30915
+INFO 2025-08-06 18:57:08,011 basehttp 3600 11008 "POST /admin/core/coursematerial/1/delete/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:57:08,413 basehttp 3600 11008 "GET /admin/core/coursematerial/ HTTP/1.1" 200 39269
+INFO 2025-08-06 18:57:08,756 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:57:13,818 basehttp 3600 11008 "GET /admin/core/coursematerial/?o=5.4 HTTP/1.1" 200 39953
+INFO 2025-08-06 18:57:14,050 basehttp 3600 11008 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:57:16,604 basehttp 3600 11008 - Broken pipe from ('127.0.0.1', 64300)
+INFO 2025-08-06 18:57:17,009 basehttp 3600 1832 "GET /admin/core/coursematerial/?o=-5.4 HTTP/1.1" 200 39993
+INFO 2025-08-06 18:57:17,245 basehttp 3600 1832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:57:29,015 basehttp 3600 1832 "GET /admin/core/coursematerial/?o=-5.4 HTTP/1.1" 200 39993
+INFO 2025-08-06 18:57:29,372 basehttp 3600 1832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:57:33,275 basehttp 3600 1832 "GET /admin/core/coursematerial/?_facets=True&o=-5.4 HTTP/1.1" 200 40827
+INFO 2025-08-06 18:57:33,489 basehttp 3600 1832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:57:33,526 basehttp 3600 1832 "GET /static/admin/img/icon-hidelink.svg HTTP/1.1" 200 784
+INFO 2025-08-06 18:57:37,761 basehttp 3600 1832 "GET /admin/core/coursematerial/?_facets=True&o=1.-5.4 HTTP/1.1" 200 41248
+INFO 2025-08-06 18:57:38,005 basehttp 3600 1832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:57:39,626 basehttp 3600 1832 "GET /admin/core/coursematerial/4/change/?_changelist_filters=_facets%3DTrue%26o%3D1.-5.4 HTTP/1.1" 200 38385
+INFO 2025-08-06 18:57:39,936 basehttp 3600 1832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:57:45,263 basehttp 3600 1832 "GET /admin/core/coursematerial/4/delete/?_changelist_filters=_facets%3DTrue%26o%3D1.-5.4 HTTP/1.1" 200 30972
+INFO 2025-08-06 18:57:47,389 basehttp 3600 1832 "POST /admin/core/coursematerial/4/delete/?_changelist_filters=_facets%3DTrue%26o%3D1.-5.4 HTTP/1.1" 302 0
+INFO 2025-08-06 18:57:47,880 basehttp 3600 1832 "GET /admin/core/coursematerial/?_facets=True&o=1.-5.4 HTTP/1.1" 200 40868
+INFO 2025-08-06 18:57:48,180 basehttp 3600 1832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:57:54,693 basehttp 3600 1832 "GET /admin/core/coursematerial/5/change/?_changelist_filters=_facets%3DTrue%26o%3D1.-5.4 HTTP/1.1" 200 38385
+INFO 2025-08-06 18:57:54,936 basehttp 3600 1832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:57:58,609 basehttp 3600 1832 "GET /admin/core/coursematerial/5/delete/?_changelist_filters=_facets%3DTrue%26o%3D1.-5.4 HTTP/1.1" 200 30972
+INFO 2025-08-06 18:58:00,371 basehttp 3600 1832 "POST /admin/core/coursematerial/5/delete/?_changelist_filters=_facets%3DTrue%26o%3D1.-5.4 HTTP/1.1" 302 0
+INFO 2025-08-06 18:58:00,842 basehttp 3600 1832 "GET /admin/core/coursematerial/?_facets=True&o=1.-5.4 HTTP/1.1" 200 40294
+INFO 2025-08-06 18:58:01,073 basehttp 3600 1832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:58:03,103 basehttp 3600 1832 "GET /admin/core/coursematerial/2/change/?_changelist_filters=_facets%3DTrue%26o%3D1.-5.4 HTTP/1.1" 200 38376
+INFO 2025-08-06 18:58:03,532 basehttp 3600 1832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:58:06,842 basehttp 3600 1832 "GET /admin/core/coursematerial/2/delete/?_changelist_filters=_facets%3DTrue%26o%3D1.-5.4 HTTP/1.1" 200 30963
+INFO 2025-08-06 18:58:08,362 basehttp 3600 1832 "POST /admin/core/coursematerial/2/delete/?_changelist_filters=_facets%3DTrue%26o%3D1.-5.4 HTTP/1.1" 302 0
+INFO 2025-08-06 18:58:08,823 basehttp 3600 1832 "GET /admin/core/coursematerial/?_facets=True&o=1.-5.4 HTTP/1.1" 200 39723
+INFO 2025-08-06 18:58:09,094 basehttp 3600 1832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:58:14,530 basehttp 3600 1832 "GET /admin/core/course/ HTTP/1.1" 200 42587
+INFO 2025-08-06 18:58:14,775 basehttp 3600 1832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:58:18,778 basehttp 3600 1832 "GET /admin/core/calendarevent/ HTTP/1.1" 200 34100
+INFO 2025-08-06 18:58:19,024 basehttp 3600 1832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:58:21,843 basehttp 3600 1832 "GET /admin/core/discussion/ HTTP/1.1" 200 37106
+INFO 2025-08-06 18:58:22,107 basehttp 3600 1832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:58:26,403 basehttp 3600 1832 "GET /admin/auth/group/add/ HTTP/1.1" 200 41382
+INFO 2025-08-06 18:58:26,636 basehttp 3600 1832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-06 18:58:34,194 basehttp 3600 1832 "POST /admin/logout/ HTTP/1.1" 302 0
+INFO 2025-08-06 18:58:34,247 basehttp 3600 1832 "GET /login/ HTTP/1.1" 200 27486
+INFO 2025-08-07 07:13:35,824 autoreload 5308 7204 Watching for file changes with StatReloader
+INFO 2025-08-07 07:14:23,426 basehttp 5308 5604 "GET / HTTP/1.1" 200 29986
+INFO 2025-08-07 07:14:23,539 basehttp 5308 5604 "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-08-07 07:14:23,572 basehttp 5308 13616 "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-08-07 07:14:24,118 basehttp 5308 13616 "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-08-07 07:14:24,426 basehttp 5308 13616 "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2025-08-07 07:14:24,763 log 5308 13616 Not Found: /favicon.ico
+WARNING 2025-08-07 07:14:24,764 basehttp 5308 13616 "GET /favicon.ico HTTP/1.1" 404 29660
+INFO 2025-08-07 07:14:43,835 basehttp 5308 13616 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:14:44,726 basehttp 5308 13616 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 17341
+INFO 2025-08-07 07:14:53,177 basehttp 5308 13616 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:14:54,053 basehttp 5308 13616 "GET /admin/ HTTP/1.1" 200 36242
+INFO 2025-08-07 07:14:54,161 basehttp 5308 13616 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-08-07 07:15:19,959 basehttp 5308 13616 "GET / HTTP/1.1" 200 30134
+INFO 2025-08-07 07:15:25,331 basehttp 5308 13616 "GET /courses/ HTTP/1.1" 200 73120
+INFO 2025-08-07 07:15:28,029 basehttp 5308 13616 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:15:28,146 basehttp 5308 13616 "GET /login/ HTTP/1.1" 200 27096
+INFO 2025-08-07 07:15:38,579 basehttp 5308 13616 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:15:38,768 basehttp 5308 13616 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:15:39,155 basehttp 5308 13616 "GET /instructor/dashboard/ HTTP/1.1" 200 42261
+INFO 2025-08-07 07:15:43,127 basehttp 5308 13616 "GET /ai/ HTTP/1.1" 200 35462
+INFO 2025-08-07 07:15:47,343 basehttp 5308 13616 "GET /ai/quiz-generator/ HTTP/1.1" 200 33284
+INFO 2025-08-07 07:16:03,401 basehttp 5308 13616 "POST /ai/quiz-generator/ HTTP/1.1" 200 45344
+INFO 2025-08-07 07:16:11,534 basehttp 5308 13616 "GET /ai/quiz/create/ HTTP/1.1" 200 33805
+INFO 2025-08-07 07:17:01,198 basehttp 5308 13616 "GET /courses/ HTTP/1.1" 200 73323
+INFO 2025-08-07 07:18:10,075 basehttp 5308 13616 "GET /courses/ HTTP/1.1" 200 73322
+INFO 2025-08-07 07:18:17,001 basehttp 5308 13616 "GET /instructor/dashboard/ HTTP/1.1" 200 41278
+INFO 2025-08-07 07:18:25,944 basehttp 5308 13616 "GET /courses/ HTTP/1.1" 200 73323
+INFO 2025-08-07 07:18:30,712 basehttp 5308 13616 "POST /courses/4/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:18:31,014 basehttp 5308 13616 "GET /courses/4/ HTTP/1.1" 200 32834
+INFO 2025-08-07 07:18:43,817 basehttp 5308 13616 "POST /courses/2/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:18:44,029 basehttp 5308 13616 "GET /courses/2/ HTTP/1.1" 200 33281
+INFO 2025-08-07 07:18:50,065 basehttp 5308 13616 "GET /instructor/dashboard/ HTTP/1.1" 200 41278
+INFO 2025-08-07 07:18:52,073 basehttp 5308 13616 "GET /courses/ HTTP/1.1" 200 73323
+INFO 2025-08-07 07:18:58,177 basehttp 5308 13616 "POST /courses/6/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:18:58,390 basehttp 5308 13616 "GET /courses/6/ HTTP/1.1" 200 32999
+INFO 2025-08-07 07:19:01,970 basehttp 5308 13616 "GET /ai/ HTTP/1.1" 200 35461
+INFO 2025-08-07 07:19:12,078 basehttp 5308 13616 "GET /ai/quiz-generator/ HTTP/1.1" 200 33283
+INFO 2025-08-07 07:19:29,420 basehttp 5308 13616 "GET /instructor/dashboard/ HTTP/1.1" 200 41278
+INFO 2025-08-07 07:19:36,268 basehttp 5308 13616 "GET /courses/ HTTP/1.1" 200 73322
+INFO 2025-08-07 07:19:45,065 basehttp 5308 13616 "POST /courses/1/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:19:45,242 basehttp 5308 13616 "GET /courses/1/ HTTP/1.1" 200 28709
+INFO 2025-08-07 07:19:55,039 basehttp 5308 13616 "GET /login/ HTTP/1.1" 200 27964
+INFO 2025-08-07 07:20:05,757 basehttp 5308 13616 "GET /login/ HTTP/1.1" 200 27964
+INFO 2025-08-07 07:20:14,788 basehttp 5308 13616 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:20:14,977 basehttp 5308 13616 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:20:15,174 basehttp 5308 13616 "GET /instructor/dashboard/ HTTP/1.1" 200 42260
+INFO 2025-08-07 07:20:30,431 basehttp 5308 13616 "GET /courses/ HTTP/1.1" 200 73322
+INFO 2025-08-07 07:20:36,647 basehttp 5308 13616 "POST /courses/4/enroll/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:20:36,855 basehttp 5308 13616 "GET /courses/4/ HTTP/1.1" 200 32829
+INFO 2025-08-07 07:20:44,980 basehttp 5308 13616 "GET /exam/5/submit/ HTTP/1.1" 200 26878
+INFO 2025-08-07 07:22:44,497 basehttp 5308 13616 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:22:44,550 basehttp 5308 13616 "GET /login/ HTTP/1.1" 200 27096
+INFO 2025-08-07 07:22:53,528 basehttp 5308 13616 "POST /login/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:22:53,697 basehttp 5308 13616 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-08-07 07:22:53,907 basehttp 5308 13616 "GET /student/dashboard/ HTTP/1.1" 200 36637
+INFO 2025-08-07 07:22:59,686 basehttp 5308 13616 "GET /student/quizzes/ HTTP/1.1" 200 52389
+INFO 2025-08-07 07:28:51,815 basehttp 5308 10812 "GET /student/quiz/2/ HTTP/1.1" 200 27633
+INFO 2025-08-07 07:29:41,809 basehttp 5308 10812 "GET /student/dashboard/ HTTP/1.1" 200 35660

@@ -1,0 +1,129 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Home - EduRamat{% endblock %}
+
+{% block content %}
+
+<div class="bg-gray-50 py-8">
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden bg-gradient-to-r from-blue-600 to-teal-600">
+        <div class="max-w-7xl mx-auto py-20 px-6 lg:px-8">
+            <div class="text-center text-white">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                    Welcome to EduRamat
+                </h1>
+                <p class="mt-4 text-xl md:text-2xl mb-8">
+                    Empowering education with modern tools and innovative learning
+                </p>
+
+                {% if user.is_authenticated %}
+                    <div class="mt-8 space-y-4">
+                        <p class="text-lg">
+                            Welcome back, {{ user.first_name }} {{ user.last_name }}
+                        </p>
+                        {% if user.role == 'student' %}
+                            <a href="{% url 'student_dashboard' %}"
+                               class="btn-primary text-lg inline-block">
+                                Go to Dashboard
+                            </a>
+                        {% elif user.role == 'instructor' %}
+                            <a href="{% url 'instructor_dashboard' %}"
+                               class="btn-primary text-lg inline-block">
+                                Go to Instructor Panel
+                            </a>
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                        <a href="{% url 'login' %}"
+                           class="btn-secondary text-lg">
+                            Sign In
+                        </a>
+                        <a href="{% url 'register' %}"
+                           class="btn-primary text-lg">
+                            Get Started
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">
+                    Our Platform Features
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Access a suite of tools designed for both students and educators
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-8 rounded-lg bg-blue-50 hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3">
+                        Comprehensive Courses
+                    </h3>
+                    <p class="text-gray-600">
+                        Explore a wide range of courses created by experienced instructors
+                    </p>
+                </div>
+
+                <div class="text-center p-8 rounded-lg bg-green-50 hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3">
+                        Interactive Assessments
+                    </h3>
+                    <p class="text-gray-600">
+                        Evaluate your progress with engaging assessments and quizzes
+                    </p>
+                </div>
+
+                <div class="text-center p-8 rounded-lg bg-purple-50 hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                            <path d="M6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-3">
+                        Community Support
+                    </h3>
+                    <p class="text-gray-600">
+                        Engage with peers and instructors to enhance your learning
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    {% if not user.is_authenticated %}
+    <div class="bg-blue-600 text-white py-16">
+        <div class="max-w-4xl mx-auto text-center px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-4">
+                Ready to Begin Your Learning Journey?
+            </h2>
+            <p class="text-lg mb-8">
+                Join thousands of learners and educators who trust EduRamat
+            </p>
+            <a href="{% url 'register' %}"
+               class="btn-secondary text-lg">
+                Get Started Today
+            </a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

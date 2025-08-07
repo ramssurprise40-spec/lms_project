@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Update Profile{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>Update Your Profile</h2>
+
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+
+  <form method="POST" enctype="multipart/form-data" novalidate>
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+
+    <div class="mb-3">
+      <label for="{{ form.bio.id_for_label }}" class="form-label">Bio</label>
+      {{ form.bio }}
+      {% if form.bio.errors %}
+        <div class="text-danger">{{ form.bio.errors }}</div>
+      {% endif %}
+    </div>
+
+    <div class="mb-3">
+      <label for="{{ form.avatar.id_for_label }}" class="form-label">Profile Picture</label><br>
+      {% if user.profile.avatar %}
+        <img src="{{ user.profile.avatar.url }}" alt="Avatar" width="150" class="mb-2 rounded-circle">
+      {% endif %}
+      {{ form.avatar }}
+      {% if form.avatar.errors %}
+        <div class="text-danger">{{ form.avatar.errors }}</div>
+      {% endif %}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Profile</button>
+  </form>
+</div>
+{% endblock %}

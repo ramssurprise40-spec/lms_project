@@ -1,0 +1,177 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Gradebook - {{ course.title }}{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Gradebook</h1>
+                    <p class="mt-2 text-gray-600">{{ course.title }}</p>
+                </div>
+                <a href="{% url 'course_detail' course.id %}" 
+                   class="inline-flex items-center px-4 py-2 bg-gray-600 text-white text-sm font-medium rounded-md hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Back to Course
+                </a>
+            </div>
+        </div>
+
+        <!-- Gradebook Table -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Student
+                            </th>
+                            {% for assignment in assignments %}
+                            <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                {{ assignment.title|truncatechars:15 }}
+                                <div class="text-xs text-gray-400 font-normal">Assignment</div>
+                            </th>
+                            {% endfor %}
+                            {% for exam in exams %}
+                            <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                {{ exam.title|truncatechars:15 }}
+                                <div class="text-xs text-gray-400 font-normal">Exam</div>
+                            </th>
+                            {% endfor %}
+                            <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Overall
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        {% for student_data in gradebook_data %}
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10">
+                                        <div class="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center">
+                                            <span class="text-white font-medium text-sm">
+                                                {{ student_data.student.first_name|first }}{{ student_data.student.last_name|first }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">
+                                            {{ student_data.student.get_full_name|default:student_data.student.username }}
+                                        </div>
+                                        <div class="text-sm text-gray-500">
+                                            {{ student_data.student.email }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            
+                            <!-- Assignment Grades -->
+                            {% for assignment in assignments %}
+                            <td class="px-6 py-4 whitespace-nowrap text-center">
+                                {% with grade=student_data.assignment_grades|get_item:assignment.id %}
+                                    {% if grade %}
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+                                                   {% if grade >= 90 %}bg-green-100 text-green-800
+                                                   {% elif grade >= 80 %}bg-blue-100 text-blue-800
+                                                   {% elif grade >= 70 %}bg-yellow-100 text-yellow-800
+                                                   {% else %}bg-red-100 text-red-800{% endif %}">
+                                            {{ grade }}%
+                                        </span>
+                                    {% else %}
+                                        <span class="text-gray-400">-</span>
+                                    {% endif %}
+                                {% endwith %}
+                            </td>
+                            {% endfor %}
+                            
+                            <!-- Exam Grades -->
+                            {% for exam in exams %}
+                            <td class="px-6 py-4 whitespace-nowrap text-center">
+                                {% with grade=student_data.exam_grades|get_item:exam.id %}
+                                    {% if grade %}
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+                                                   {% if grade >= 90 %}bg-green-100 text-green-800
+                                                   {% elif grade >= 80 %}bg-blue-100 text-blue-800
+                                                   {% elif grade >= 70 %}bg-yellow-100 text-yellow-800
+                                                   {% else %}bg-red-100 text-red-800{% endif %}">
+                                            {{ grade }}%
+                                        </span>
+                                    {% else %}
+                                        <span class="text-gray-400">-</span>
+                                    {% endif %}
+                                {% endwith %}
+                            </td>
+                            {% endfor %}
+                            
+                            <!-- Overall Grade -->
+                            <td class="px-6 py-4 whitespace-nowrap text-center">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
+                                           {% if student_data.overall_grade >= 90 %}bg-green-100 text-green-800
+                                           {% elif student_data.overall_grade >= 80 %}bg-blue-100 text-blue-800
+                                           {% elif student_data.overall_grade >= 70 %}bg-yellow-100 text-yellow-800
+                                           {% else %}bg-red-100 text-red-800{% endif %}">
+                                    {{ student_data.overall_grade }}%
+                                </span>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="100%" class="px-6 py-12 text-center">
+                                <div class="text-gray-500">
+                                    <i class="fas fa-users text-4xl mb-2"></i>
+                                    <p>No students enrolled in this course.</p>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Summary Statistics -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-users text-blue-600 text-2xl"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium text-gray-500">Total Students</p>
+                        <p class="text-2xl font-semibold text-gray-900">{{ gradebook_data|length }}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-tasks text-green-600 text-2xl"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium text-gray-500">Assignments</p>
+                        <p class="text-2xl font-semibold text-gray-900">{{ assignments|length }}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-clipboard-check text-purple-600 text-2xl"></i>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium text-gray-500">Exams</p>
+                        <p class="text-2xl font-semibold text-gray-900">{{ exams|length }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

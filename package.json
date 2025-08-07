@@ -1,0 +1,22 @@
+{
+  "name": "lms_project",
+  "version": "1.0.0",
+  "description": "Learning Management System with Tailwind CSS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./static/css/input.css -o ./static/css/styles.css --watch",
+    "build": "npx tailwindcss -i ./static/css/input.css -o ./static/css/styles.css --minify",
+    "build:dev": "npx tailwindcss -i ./static/css/input.css -o ./static/css/styles.css",
+    "purge": "npx tailwindcss -i ./static/css/input.css -o ./static/css/styles.css --minify --purge"
+  },
+  "keywords": ["lms", "django", "tailwindcss", "education"],
+  "author": "LMS Team",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32"
+  }
+}

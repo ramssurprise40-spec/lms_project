@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Course Materials{% endblock %}
+
+{% block content %}
+<ul class="list-group">
+    {% for material in materials %}
+    <li class="list-group-item">
+        <h5>{{ material.title }}</h5>
+        <p>Type: {{ material.material_type }}</p>
+        <p>Description: {{ material.description }}</p>
+        {% if material.file %}
+        <a href="{{ material.file.url }}" class="btn btn-primary">Download</a>
+        {% endif %}
+        {% if material.external_url %}
+        <a href="{{ material.external_url }}" class="btn btn-secondary">View</a>
+        {% endif %}
+    </li>
+    {% empty %}
+    <li class="list-group-item">No materials available.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

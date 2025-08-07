@@ -1,0 +1,97 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Quiz Overview - Academic Learning Platform{% endblock %}
+
+{% block content %}
+cdiv class="min-h-screen py-12" style="background-color: var(--light-gray);"e
+    cdiv class="max-w-3xl mx-auto px-6 lg:px-8"e
+        cdiv class="mb-6"e
+            ca href="{% url 'student_quiz_list' %}"
+               class="inline-flex items-center px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition-colors"e
+                ← Back to Assessments
+            c/ae
+        c/dive
+
+        <!-- Quiz Header -->
+        <div class="mb-8 bg-white rounded-lg shadow-sm p-8" style="border: 1px solid var(--border-gray);">
+            <h1 class="serif text-3xl font-bold university-blue mb-3">
+                {{ quiz.title }}
+            </h1>
+            <div class="space-y-2">
+                <p class="text-lg" style="color: var(--academic-gray);">Course: <span class="font-medium">{{ quiz.course.title }}</span></p>
+                <p class="text-sm text-gray-500">Instructor: {{ quiz.created_by.first_name }} {{ quiz.created_by.last_name }}</p>
+            </div>
+        </div>
+
+        <!-- Quiz Instructions -->
+        <div class="mb-8 bg-white p-8 rounded-lg shadow-sm" style="border: 1px solid var(--border-gray); border-left: 4px solid var(--university-blue);">
+            <h2 class="text-xl font-semibold university-blue mb-4">Assessment Instructions</h2>
+            <div class="space-y-2">
+                <p style="color: var(--academic-gray);">• Read each question carefully before selecting your answer</p>
+                <p style="color: var(--academic-gray);">• Ensure all questions are answered before submission</p>
+                <p style="color: var(--academic-gray);">• Once submitted, answers cannot be modified</p>
+            </div>
+        </div>
+
+        <!-- Quiz Questions -->
+        <form method="post" id="quiz-form">
+            {% csrf_token %}
+            {% for question in exam.questions.all %}
+                <div class="bg-white p-6 rounded-xl shadow-lg mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Question {{ question.order }}: {{ question.text }}</h3>
+                    
+                    {% if question.question_type == 'multiple_choice' %}
+                        <div>
+                            {% for choice in question.choices.all %}
+                                <div class="mb-2">
+                                    <label class="inline-flex items-center cursor-pointer hover:bg-gray-50 p-2 rounded">
+                                        <input type="radio" name="question_{{ question.id }}" value="{{ choice.id }}"
+                                               class="form-radio text-blue-600" required>
+                                        <span class="ml-2 text-gray-700">{{ choice.text }}</span>
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% elif question.question_type == 'true_false' %}
+                        <div>
+                            <div class="mb-2">
+                                <label class="inline-flex items-center cursor-pointer hover:bg-gray-50 p-2 rounded">
+                                    <input type="radio" name="question_{{ question.id }}" value="true"
+                                           class="form-radio text-blue-600" required>
+                                    <span class="ml-2 text-gray-700">True</span>
+                                </label>
+                            </div>
+                            <div class="mb-2">
+                                <label class="inline-flex items-center cursor-pointer hover:bg-gray-50 p-2 rounded">
+                                    <input type="radio" name="question_{{ question.id }}" value="false"
+                                           class="form-radio text-blue-600" required>
+                                    <span class="ml-2 text-gray-700">False</span>
+                                </label>
+                            </div>
+                        </div>
+                    {% elif question.question_type == 'short_answer' %}
+                        <div>
+                            <textarea name="question_{{ question.id }}" rows="3" required
+                                      class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                      placeholder="Type your answer here..."></textarea>
+                        </div>
+                    {% endif %}
+                </div>
+            {% empty %}
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <p class="text-yellow-800">This quiz has no questions yet. Please contact your instructor.</p>
+                </div>
+            {% endfor %}
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit"
+                        class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                    Submit Answers
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

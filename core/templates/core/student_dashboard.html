@@ -1,0 +1,185 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Student Dashboard - EduKart{% endblock %}
+
+{% block content %}
+<div class="min-h-screen py-8 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Welcome Header -->
+        <div class="mb-8">
+            <div class="card p-8">
+                <h1 class="text-3xl font-bold text-primary mb-3">
+                    Welcome back, {{ user.first_name }} {{ user.last_name }}
+                </h1>
+                <p class="text-lg text-gray-600">Continue your learning journey with modern tools and expert guidance</p>
+                <div class="mt-6 flex items-center space-x-4">
+                    <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Student</span>
+                    <span class="text-sm text-gray-500">Academic Year 2024-2025</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <a href="{% url 'course_list' %}" 
+               class="bg-white rounded-xl shadow-soft p-6 hover:shadow-medium transition-all duration-300 border border-secondary-200 hover:border-primary-300">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                            <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                            <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-primary-900">Browse Courses</h3>
+                        <p class="text-sm text-secondary-600">Find new programs</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="{% url 'student_quiz_list' %}" 
+               class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow border border-gray-100">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold university-blue">Assessments</h3>
+                        <p class="text-sm text-gray-500">Complete assignments</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="{% url 'student_profile' %}" 
+               class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow border border-gray-100">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold university-blue">Profile</h3>
+                        <p class="text-sm text-gray-500">Manage account</p>
+                    </div>
+                </div>
+            </a>
+            
+            <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold university-blue">Progress</h3>
+                        <p class="text-sm text-gray-500">{{ user.enrollments.count }} courses enrolled</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic Overview -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <!-- Enrolled Courses -->
+            <div class="lg:col-span-2 bg-white rounded-lg shadow-sm p-8" style="border: 1px solid var(--border-gray);">
+                <h2 class="serif text-2xl font-bold university-blue mb-6">My Courses</h2>
+                {% if user.enrollments.all %}
+                    <div class="space-y-4">
+                        {% for enrollment in user.enrollments.all %}
+                            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-sm transition-shadow">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">
+                                        <a href="{% url 'course_detail' enrollment.course.pk %}" class="hover:text-blue-600">
+                                            {{ enrollment.course.title }}
+                                        </a>
+                                    </h3>
+                                    <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">
+                                        Enrolled
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">{{ enrollment.course.description|truncatewords:15 }}</p>
+                                <div class="flex items-center justify-between">
+                                    <div class="text-xs text-gray-500">
+                                        Instructor: {{ enrollment.course.instructor.first_name }} {{ enrollment.course.instructor.last_name }}
+                                    </div>
+                                    <a href="{% url 'message_instructor' enrollment.course.instructor.pk %}" 
+                                       class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                        Contact
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="text-center py-12">
+                        <div class="mb-4">
+                            <svg class="w-16 h-16 text-gray-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">No courses enrolled yet</h3>
+                        <p class="text-gray-600 mb-6">Start your learning journey by enrolling in a course</p>
+                        <a href="{% url 'course_list' %}" 
+                           class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                            Browse Courses
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="space-y-6">
+                <div class="bg-white rounded-lg shadow-sm p-6" style="border: 1px solid var(--border-gray);">
+                    <h3 class="serif text-lg font-semibold university-blue mb-4">Academic Statistics</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Courses Enrolled</span>
+                            <span class="font-semibold">{{ user.enrollments.count }}</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Assessments Completed</span>
+                            <span class="font-semibold">0</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Overall Progress</span>
+                            <span class="font-semibold text-green-600">Active</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-6" style="border: 1px solid var(--border-gray);">
+                    <h3 class="serif text-lg font-semibold university-blue mb-4">Recent Activity</h3>
+                    <div class="space-y-4">
+                        {% for enrollment in user.enrollments.all|slice:":3" %}
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-900">
+                                        Enrolled in {{ enrollment.course.title }}
+                                    </p>
+                                    <p class="text-xs text-gray-500">
+                                        {{ enrollment.enrolled_at|date:"M d, Y" }}
+                                    </p>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <p class="text-gray-500 text-center text-sm">No recent activity</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

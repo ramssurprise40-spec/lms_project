@@ -1,0 +1,126 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Save Quiz to Course{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-lg flex items-center justify-center">
+                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-900 mb-4">Save Quiz to Course</h1>
+            <p class="text-lg text-gray-600">
+                Select a course to save your AI-generated quiz
+            </p>
+        </div>
+
+        <!-- Quiz Preview -->
+        {% if quiz_data %}
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">
+                📝 Quiz Preview: {{ quiz_data.topic }}
+            </h2>
+            <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                <p class="text-sm text-gray-600">
+                    <strong>Questions:</strong> {{ quiz_data.num_questions }}
+                    | <strong>Type:</strong> {{ quiz_data.question_type|title }}
+                </p>
+            </div>
+            
+            {% if quiz_data.parsed_questions %}
+                <div class="space-y-4">
+                    {% for question in quiz_data.parsed_questions|slice:":3" %}
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-800 mb-2">Question {{ question.order }}:</h4>
+                            <p class="text-gray-700 mb-2">{{ question.text }}</p>
+                            
+                            {% if question.type == 'multiple_choice' %}
+                                <div class="ml-4 text-sm text-gray-600">
+                                    {% for choice in question.choices %}
+                                        <p class="{% if choice.letter == question.correct_answer %}text-green-600 font-semibold{% endif %}">
+                                            {{ choice.letter }}) {{ choice.text }}
+                                        </p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    
+                    {% if quiz_data.parsed_questions|length > 3 %}
+                        <p class="text-center text-gray-500 text-sm">
+                            ... and {{ quiz_data.parsed_questions|length|add:"-3" }} more questions
+                        </p>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <!-- Course Selection Form -->
+        <div class="bg-white rounded-xl shadow-lg p-8">
+            <form method="post">
+                {% csrf_token %}
+                
+                <div class="mb-6">
+                    <label for="course_id" class="block text-sm font-medium text-gray-700 mb-2">
+                        Select Course *
+                    </label>
+                    <select id="course_id" 
+                            name="course_id" 
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        <option value="">Choose a course...</option>
+                        {% for course in courses %}
+                            <option value="{{ course.id }}">{{ course.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                {% if quiz_data %}
+                    <input type="hidden" name="topic" value="{{ quiz_data.topic }}">
+                {% endif %}
+
+                <div class="flex justify-between items-center pt-6">
+                    <a href="{% url 'ai_quiz_generator' %}" 
+                       class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+                        ← Back to Generator
+                    </a>
+                    
+                    <button type="submit" 
+                            class="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Save Quiz to Course
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        {% if not courses %}
+            <div class="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="text-sm font-medium text-yellow-800">No Courses Available</h3>
+                        <div class="mt-2 text-sm text-yellow-700">
+                            <p>You need to create a course first before you can save quizzes. 
+                               <a href="{% url 'course_create' %}" class="underline hover:text-yellow-600">Create a course now</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

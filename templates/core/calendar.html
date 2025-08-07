@@ -1,0 +1,80 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Calendar{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">Calendar</h1>
+            <p class="mt-2 text-gray-600">Upcoming events and important dates</p>
+        </div>
+
+        <!-- Events List -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {% for event in events %}
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="p-6">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4
+                                        {% if event.event_type == 'exam' %}bg-red-100
+                                        {% elif event.event_type == 'assignment' %}bg-yellow-100
+                                        {% elif event.event_type == 'class' %}bg-blue-100
+                                        {% else %}bg-gray-100{% endif %}">
+                                <i class="{% if event.event_type == 'exam' %}fas fa-clipboard-check text-red-600
+                                          {% elif event.event_type == 'assignment' %}fas fa-tasks text-yellow-600
+                                          {% elif event.event_type == 'class' %}fas fa-chalkboard-teacher text-blue-600
+                                          {% else %}fas fa-calendar text-gray-600{% endif %}"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">{{ event.title }}</h3>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+                                           {% if event.event_type == 'exam' %}bg-red-100 text-red-800
+                                           {% elif event.event_type == 'assignment' %}bg-yellow-100 text-yellow-800
+                                           {% elif event.event_type == 'class' %}bg-blue-100 text-blue-800
+                                           {% else %}bg-gray-100 text-gray-800{% endif %}">
+                                    {{ event.get_event_type_display }}
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-right">
+                            <div class="text-sm font-medium text-gray-900">
+                                {{ event.start_date|date:"M d, Y" }}
+                            </div>
+                            <div class="text-sm text-gray-500">
+                                {{ event.start_date|date:"H:i" }}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {% if event.description %}
+                    <p class="text-gray-600 mb-4">{{ event.description }}</p>
+                    {% endif %}
+                    
+                    {% if event.course %}
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-book mr-1"></i>
+                        <span>{{ event.course.title }}</span>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-span-2">
+                <div class="bg-white rounded-lg shadow-md p-12">
+                    <div class="text-center">
+                        <i class="fas fa-calendar-alt text-gray-400 text-6xl mb-4"></i>
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">No Upcoming Events</h3>
+                        <p class="text-gray-600">Your calendar events will appear here when they are scheduled.</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
