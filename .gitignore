@@ -1,0 +1,40 @@
+# Environnements virtuels
+env/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Fichiers d’environnement
+.env
+*.env
+
+# Base de données locale
+*.sqlite3
+
+# Fichiers de logs
+*.log
+logs/
+
+# Node (si tu utilises tailwind ou npm)
+node_modules/
+dist/
+
+# Fichiers systèmes / OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+
+# VSCode et autres IDE
+.vscode/
+.idea/
+
+# Tests temporaires
+coverage/
+.pytest_cache/
+
+# Media/Static générés
+media/
+staticfiles/
