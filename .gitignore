@@ -1,40 +1,68 @@
-# Environnements virtuels
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
 env/
 venv/
-__pycache__/
-*.pyc
-*.pyo
-
-# Fichiers d’environnement
-.env
-*.env
-
-# Base de données locale
+ENV/
+.venv/
 *.sqlite3
 
-# Fichiers de logs
+# Django
+db.sqlite3
 *.log
-logs/
+media/
+staticfiles/
+static_root/
+local_settings.py
 
-# Node (si tu utilises tailwind ou npm)
+# Node.js
 node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
 dist/
+build/
+.cache/
+.next/
+out/
 
-# Fichiers systèmes / OS
+# dotenv
+.env
+.env.*
+!.env.example
+
+# OS files
 .DS_Store
 Thumbs.db
+
+# VS Code
+.vscode/
 
 # Docker
 *.pid
 
-# VSCode et autres IDE
-.vscode/
-.idea/
-
-# Tests temporaires
-coverage/
+# Test & Coverage
+.coverage
+htmlcov/
+.tox/
 .pytest_cache/
+coverage/
 
-# Media/Static générés
-media/
-staticfiles/
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Gunicorn
+gunicorn.pid
+
+# Misc
+*.swp
+*.swo
+
+# Backup files
+*.bak
+*.tmp
